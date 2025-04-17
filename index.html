@@ -19,87 +19,7 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            light: '#c9a74d',
-                            dark: '#d4b45f'
-                        },
-                        secondary: {
-                            light: '#1a1a1a',
-                            dark: '#2d2d2d'
-                        },
-                        background: {
-                            light: '#f8f8f8',
-                            dark: '#121212'
-                        },
-                        text: {
-                            light: '#333333',
-                            dark: '#f0f0f0'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Cormorant Garamond', 'serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 1s ease-in-out',
-                        'fade-in-up': 'fadeInUp 1s ease-out',
-                        'fade-in-down': 'fadeInDown 1s ease-out',
-                        'theme-switch': 'themeSwitch 0.5s ease-out'
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': {
-                                opacity: '0'
-                            },
-                            '100%': {
-                                opacity: '1'
-                            },
-                        },
-
-                        fadeInUp: {
-                            '0%': {
-                                opacity: '0',
-                                transform: 'translateY(20px)'
-                            },
-                            '100%': {
-                                opacity: '1',
-                                transform: 'translateY(0)'
-                            },
-                        },
-                        fadeInDown: {
-                            '0%': {
-                                opacity: '0',
-                                transform: 'translateY(-20px)'
-                            },
-                            '100%': {
-                                opacity: '1',
-                                transform: 'translateY(0)'
-                            },
-
-
-                        },
-                        themeSwitch: {
-                            '0%': {
-                                transform: 'scale(1) rotate(0deg)'
-                            },
-                            '50%': {
-                                transform: 'scale(0.8) rotate(180deg)'
-                            },
-                            '100%': {
-                                transform: 'scale(1) rotate(360deg)'
-                            }
-                        }
-                    },
-                }
-            }
-        }
-    </script>
+    <script src="js/tailwind.js"></script>
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
@@ -110,155 +30,8 @@
 
     <!-- Splide.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="css/main.css">
 
-    <style>
-        /* Custom styles */
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .hover-scale {
-            transition: transform 0.3s ease;
-        }
-
-        .hover-scale:hover {
-            transform: scale(1.03);
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--color-secondary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--color-primary);
-            border-radius: 4px;
-        }
-
-        /* Theme variables */
-        :root {
-            --color-primary: #c9a74d;
-            --color-primary-dark: #d4b45f;
-            --color-secondary: #1a1a1a;
-            --color-secondary-dark: #2d2d2d;
-            --color-background: #f8f8f8;
-            --color-background-dark: #121212;
-            --color-text: #333333;
-            --color-text-dark: #f0f0f0;
-            --color-testimonies: #fbe8e8;
-            --color-testimonies-dark: #353333;
-        }
-
-        [data-theme="dark"] {
-            --color-primary: var(--color-primary-dark);
-            --color-secondary: var(--color-secondary-dark);
-            --color-background: var(--color-background-dark);
-            --color-text: var(--color-text-dark);
-            --color-testimonies: var(--color-testimonies-dark);
-        }
-
-        body {
-            background-color: var(--color-background);
-            color: var(--color-text);
-            transition: background-color 0.5s ease, color 0.3s ease;
-        }
-
-        .bg-primary {
-            background-color: var(--color-primary);
-        }
-
-        .text-primary {
-            color: var(--color-primary);
-        }
-
-        .border-primary {
-            border-color: var(--color-primary);
-        }
-
-        .bg-secondary {
-            background-color: var(--color-secondary);
-        }
-
-        .bg-testimonies {
-            background-color: var(--color-testimonies);
-        }
-
-
-        /* Active link indicator - desktop */
-        .nav-link.active {
-            color: #f0a248;
-            /* amber-600 */
-        }
-
-        .dark .nav-link.active {
-            color: #f5b341;
-            /* amber-400 */
-        }
-
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #e99a3f;
-            /* amber-600 */
-            transform: scaleX(1);
-        }
-
-        .dark .nav-link.active::after {
-            background-color: #e29f2b;
-            /* amber-400 */
-        }
-
-        /* Hover effect - desktop */
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: currentColor;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        /* Mobile active state */
-        .mobile-nav-link.active {
-            color: #dc913b;
-            /* amber-600 */
-            font-weight: 600;
-        }
-
-        .dark .mobile-nav-link.active {
-            color: #f8a920;
-            /* amber-400 */
-        }
-    </style>
 </head>
 
 <body class="font-sans antialiased overflow-x-hidden">
@@ -530,57 +303,57 @@
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80" alt="Dish 1" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80" alt="Dish 1" class="w-full h-64 object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fas fa-search-plus text-3xl text-secondary"></i>
                     </div>
                 </div>
 
                 <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1381&q=80" alt="Dish 2" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1381&q=80" alt="Dish 2" class="w-full h-64 object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fas fa-search-plus text-3xl text-secondary"></i>
                     </div>
                 </div>
 
                 <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1365&q=80" alt="Dish 3" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1365&q=80" alt="Dish 3" class="w-full h-64 object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fas fa-search-plus text-3xl text-secondary"></i>
                     </div>
                 </div>
 
                 <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1310&q=80" alt="Dish 4" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0">
+                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1310&q=80" alt="Dish 4" class="w-full h-64 object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fas fa-search-plus text-3xl text-secondary"></i>
                     </div>
                 </div>
 
                 <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in">
-                    <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1547&q=80" alt="Dish 5" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0">
+                    <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1547&q=80" alt="Dish 5" class="w-full h-64 object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fas fa-search-plus text-3xl text-secondary"></i>
                     </div>
                 </div>
 
                 <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80" alt="Dish 6" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80" alt="Dish 6" class="w-full h-64 object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fas fa-search-plus text-3xl text-secondary"></i>
                     </div>
                 </div>
 
                 <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Dish 7" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Dish 7" class="w-full h-64 object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fas fa-search-plus text-3xl text-secondary"></i>
                     </div>
                 </div>
 
                 <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="Dish 8" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0">
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="Dish 8" class="w-full h-64 object-cover" loading="lazy">
+                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fas fa-search-plus text-3xl text-secondary"></i>
                     </div>
                 </div>
@@ -1000,289 +773,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
     <!-- Main JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Preloader
-            window.addEventListener('load', function() {
-                setTimeout(function() {
-                    document.getElementById('preloader').style.opacity = '0';
-                    document.getElementById('preloader').style.visibility = 'hidden';
-                }, 1000);
-            });
-
-            // Theme Toggling System
-            const themeToggle = document.getElementById('theme-toggle');
-            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-            const themeIcon = document.getElementById('theme-icon');
-            const themeIconMobile = document.getElementById('theme-icon-mobile');
-            const html = document.documentElement;
-
-            // Check for saved theme preference or use preferred color scheme
-            const savedTheme = localStorage.getItem('theme') ||
-                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-            // Apply the saved or preferred theme
-            html.setAttribute('data-theme', savedTheme);
-            updateThemeIcons(savedTheme);
-
-            // Toggle theme function
-            function toggleTheme() {
-                const currentTheme = html.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-                // Apply new theme
-                html.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-
-                // Update icons
-                updateThemeIcons(newTheme);
-
-                // Add animation class
-                themeIcon.classList.add('animate-theme-switch');
-                themeIconMobile.classList.add('animate-theme-switch');
-
-                // Remove animation class after animation completes
-                setTimeout(() => {
-                    themeIcon.classList.remove('animate-theme-switch');
-                    themeIconMobile.classList.remove('animate-theme-switch');
-                }, 500);
-            }
-
-            // Update theme icons based on current theme
-            function updateThemeIcons(theme) {
-                if (theme === 'dark') {
-                    themeIcon.className = 'fas fa-sun';
-                    themeIconMobile.className = 'fas fa-sun';
-                } else {
-                    themeIcon.className = 'fas fa-moon';
-                    themeIconMobile.className = 'fas fa-moon';
-                }
-            }
-
-            // Event listeners for theme toggles
-            themeToggle.addEventListener('click', toggleTheme);
-            themeToggleMobile.addEventListener('click', toggleTheme);
-
-            // Mobile menu functionality
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuClose = document.getElementById('mobile-menu-close');
-
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.remove('opacity-0', 'invisible');
-                mobileMenu.classList.add('opacity-100', 'visible');
-                document.body.style.overflow = 'hidden';
-
-                // Animate hamburger to X
-                const spans = mobileMenuButton.querySelectorAll('span');
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-            });
-
-            mobileMenuClose.addEventListener('click', function() {
-                mobileMenu.classList.remove('opacity-100', 'visible');
-                mobileMenu.classList.add('opacity-0', 'invisible');
-                document.body.style.overflow = 'auto';
-
-                // Animate X back to hamburger
-                const spans = mobileMenuButton.querySelectorAll('span');
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-            });
-
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.remove('opacity-100', 'visible');
-                    mobileMenu.classList.add('opacity-0', 'invisible');
-                    document.body.style.overflow = 'auto';
-
-                    // Animate X back to hamburger
-                    const spans = mobileMenuButton.querySelectorAll('span');
-                    spans[0].style.transform = '';
-                    spans[1].style.opacity = '';
-                    spans[2].style.transform = '';
-                });
-            });
-
-            // Initialize GSAP animations
-            gsap.registerPlugin(ScrollTrigger);
-
-            // Animate elements on scroll
-            gsap.utils.toArray('[data-aos]').forEach(element => {
-                const animation = element.getAttribute('data-aos');
-                const delay = element.getAttribute('data-aos-delay') || 0;
-
-                gsap.from(element, {
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 80%",
-                        toggleActions: "play none none none"
-                    },
-                    opacity: 0,
-                    y: animation.includes('up') ? 50 : animation.includes('down') ? -50 : 0,
-                    duration: 1,
-                    delay: parseFloat(delay),
-                    ease: "power3.out"
-                });
-            });
-
-            // Initialize Splide slider
-            new Splide('#testimonials-slider', {
-                type: 'loop',
-                perPage: 1,
-                autoplay: true,
-                interval: 5000,
-                pauseOnHover: true,
-                arrows: false,
-                pagination: false,
-                classes: {
-                    pagination: 'splide__pagination splide-pagination',
-                    page: 'splide__pagination__page splide-page'
-                }
-            }).mount();
-
-            // Sticky navigation on scroll
-            window.addEventListener('scroll', function() {
-                const navbar = document.getElementById('navbar');
-                const backToTop = document.getElementById('back-to-top');
-
-                if (window.scrollY > 100) {
-                    navbar.classList.add('shadow-lg', 'py-4');
-                    navbar.classList.remove('py-6');
-                } else {
-                    navbar.classList.remove('shadow-lg', 'py-4');
-                    navbar.classList.add('py-6');
-                }
-
-                // Show/hide back to top button
-                if (window.scrollY > 300) {
-                    backToTop.classList.remove('opacity-0', 'invisible');
-                    backToTop.classList.add('opacity-100', 'visible');
-                } else {
-                    backToTop.classList.remove('opacity-100', 'visible');
-                    backToTop.classList.add('opacity-0', 'invisible');
-                }
-            });
-
-            // Menu filtering
-            const menuFilters = document.querySelectorAll('.menu-filter');
-            const menuItems = document.querySelectorAll('.menu-item');
-
-            menuFilters.forEach(filter => {
-                filter.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    menuFilters.forEach(btn => btn.classList.remove('active', 'bg-primary', 'text-secondary'));
-                    menuFilters.forEach(btn => btn.classList.add('hover:bg-gray-800'));
-
-                    // Add active class to clicked button
-                    this.classList.add('active', 'bg-primary', 'text-secondary');
-                    this.classList.remove('hover:bg-gray-800');
-
-                    const filterValue = this.getAttribute('data-filter');
-
-                    menuItems.forEach(item => {
-                        if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Gallery lightbox
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const lightbox = document.createElement('div');
-            lightbox.className = 'fixed inset-0 w-full h-full bg-black/90 z-[999] flex items-center justify-center p-4 hidden';
-            lightbox.innerHTML = `
-                <div class="relative max-w-4xl w-full">
-                    <img id="lightbox-img" src="" alt="" class="w-full h-auto max-h-[90vh] object-contain">
-                    <button class="absolute -top-12 right-0 text-3xl text-white hover:text-primary transition-colors duration-300" id="lightbox-close">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            `;
-            document.body.appendChild(lightbox);
-
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxClose = document.getElementById('lightbox-close');
-
-            galleryItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const imgSrc = this.querySelector('img').src;
-                    const imgAlt = this.querySelector('img').alt;
-
-                    lightboxImg.src = imgSrc;
-                    lightboxImg.alt = imgAlt;
-                    lightbox.classList.remove('hidden');
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-
-            lightboxClose.addEventListener('click', function() {
-                lightbox.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            });
-
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) {
-                    lightbox.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-
-
-            // Add active class to current section
-            document.addEventListener('DOMContentLoaded', function() {
-                const sections = document.querySelectorAll('section');
-                const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
-
-                window.addEventListener('scroll', function() {
-                    let current = '';
-
-                    sections.forEach(section => {
-                        const sectionTop = section.offsetTop;
-                        const sectionHeight = section.clientHeight;
-
-                        if (pageYOffset >= (sectionTop - 300)) {
-                            current = section.getAttribute('id');
-                        }
-                    });
-
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${current}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                });
-            });
-
-            // Form submission
-            const forms = document.querySelectorAll('form');
-
-            forms.forEach(form => {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-
-                    // Here you would typically send the form data to a server
-                    // For demonstration, we'll just show a success message
-
-                    const formData = new FormData(this);
-                    const formName = this.classList.contains('reservation__form') ? 'Reservation' : 'Newsletter';
-
-                    // Simulate form submission
-                    setTimeout(() => {
-                        alert(`${formName} form submitted successfully!`);
-                        this.reset();
-                    }, 1000);
-                });
-            });
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

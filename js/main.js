@@ -190,30 +190,33 @@
          });
      });
 
-     // Gallery lightbox
+     // Gallery lightbox - FIXED VERSION
      const galleryItems = document.querySelectorAll('.gallery-item');
+
+     // Create lightbox structure first
      const lightbox = document.createElement('div');
      lightbox.className = 'fixed inset-0 w-full h-full bg-black/90 z-[999] flex items-center justify-center p-4 hidden';
      lightbox.innerHTML = `
-                <div class="relative max-w-4xl w-full">
-                    <img id="lightbox-img" src="" alt="" class="w-full h-auto max-h-[90vh] object-contain">
-                    <button class="absolute -top-12 right-0 text-3xl text-white hover:text-primary transition-colors duration-300" id="lightbox-close">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            `;
+        <div class="relative max-w-4xl w-full">
+            <img id="lightbox-img" src="" alt="" class="w-full h-auto max-h-[90vh] object-contain">
+            <button class="absolute -top-12 right-0 text-3xl text-white hover:text-primary transition-colors duration-300" id="lightbox-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
      document.body.appendChild(lightbox);
 
+     // Now these elements exist in the DOM
      const lightboxImg = document.getElementById('lightbox-img');
      const lightboxClose = document.getElementById('lightbox-close');
 
      galleryItems.forEach(item => {
          item.addEventListener('click', function() {
-             const imgSrc = this.querySelector('img').src;
-             const imgAlt = this.querySelector('img').alt;
+             const img = this.querySelector('img');
+             if (!img) return;
 
-             lightboxImg.src = imgSrc;
-             lightboxImg.alt = imgAlt;
+             lightboxImg.src = img.src;
+             lightboxImg.alt = img.alt;
              lightbox.classList.remove('hidden');
              document.body.style.overflow = 'hidden';
          });

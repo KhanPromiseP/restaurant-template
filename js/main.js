@@ -190,50 +190,6 @@
          });
      });
 
-     // Gallery lightbox - FIXED VERSION
-     const galleryItems = document.querySelectorAll('.gallery-item');
-
-     // Create lightbox structure first
-     const lightbox = document.createElement('div');
-     lightbox.className = 'fixed inset-0 w-full h-full bg-black/90 z-[999] flex items-center justify-center p-4 hidden';
-     lightbox.innerHTML = `
-        <div class="relative max-w-4xl w-full">
-            <img id="lightbox-img" src="" alt="" class="w-full h-auto max-h-[90vh] object-contain">
-            <button class="absolute -top-12 right-0 text-3xl text-white hover:text-primary transition-colors duration-300" id="lightbox-close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    `;
-     document.body.appendChild(lightbox);
-
-     // Now these elements exist in the DOM
-     const lightboxImg = document.getElementById('lightbox-img');
-     const lightboxClose = document.getElementById('lightbox-close');
-
-     galleryItems.forEach(item => {
-         item.addEventListener('click', function() {
-             const img = this.querySelector('img');
-             if (!img) return;
-
-             lightboxImg.src = img.src;
-             lightboxImg.alt = img.alt;
-             lightbox.classList.remove('hidden');
-             document.body.style.overflow = 'hidden';
-         });
-     });
-
-     lightboxClose.addEventListener('click', function() {
-         lightbox.classList.add('hidden');
-         document.body.style.overflow = 'auto';
-     });
-
-     lightbox.addEventListener('click', function(e) {
-         if (e.target === lightbox) {
-             lightbox.classList.add('hidden');
-             document.body.style.overflow = 'auto';
-         }
-     });
-
 
      // Add active class to current section
      document.addEventListener('DOMContentLoaded', function() {
@@ -260,6 +216,56 @@
              });
          });
      });
+
+
+
+
+     // Lightbox functionality
+     document.addEventListener('DOMContentLoaded', function() {
+         const galleryItems = document.querySelectorAll('.gallery-item');
+         const lightbox = document.getElementById('lightbox');
+         const lightboxImg = document.getElementById('lightbox-img');
+         const closeBtn = document.getElementById('close-btn');
+
+         // Click on gallery item or overlay
+         galleryItems.forEach(item => {
+             const img = item.querySelector('img');
+             const overlay = item.querySelector('.gallery-overlay');
+
+             [img, overlay].forEach(el => {
+                 el.addEventListener('click', () => {
+                     lightbox.classList.remove('hidden');
+                     lightboxImg.src = img.src;
+                     lightboxImg.alt = img.alt;
+                     document.body.style.overflow = 'hidden';
+                 });
+             });
+         });
+
+         // Close lightbox
+         closeBtn.addEventListener('click', () => {
+             lightbox.classList.add('hidden');
+             document.body.style.overflow = 'auto';
+         });
+
+         // Close when clicking outside image
+         lightbox.addEventListener('click', (e) => {
+             if (e.target === lightbox) {
+                 lightbox.classList.add('hidden');
+                 document.body.style.overflow = 'auto';
+             }
+         });
+
+         // Close with ESC key
+         document.addEventListener('keydown', (e) => {
+             if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                 lightbox.classList.add('hidden');
+                 document.body.style.overflow = 'auto';
+             }
+         });
+     });
+
+
 
      // Form submission
      const forms = document.querySelectorAll('form');

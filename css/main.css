@@ -277,16 +277,3 @@ body {
 .animate-fade-in-up {
     animation: fade-in-up 0.8s ease-out forwards;
 }
-
-
-
-/* the tittle styling */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap');
-
-.font-gourmet {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-style: italic;
-    letter-spacing: -0.015em;
-}

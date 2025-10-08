@@ -267,24 +267,54 @@
 
 
 
-     // Form submission
-     const forms = document.querySelectorAll('form');
 
-     forms.forEach(form => {
-         form.addEventListener('submit', function(e) {
-             e.preventDefault();
+// Contact form functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.querySelector('form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(contactForm);
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      
+      // Show loading state
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      
+      try {
+        const response = await fetch('/.netlify/functions/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message')
+          }),
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          // Show success message
+          alert('Thank you! Your message has been sent successfully. We will get back to you soon.');
+          contactForm.reset();
+        } else {
+          throw new Error(data.error || 'Failed to send message');
+        }
+      } catch (error) {
+        alert('Sorry, there was an error sending your message. Please try again or call us directly.');
+        console.error('Form error:', error);
+      } finally {
+        // Reset button state
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    });
+  }
+});
 
-             // Here you would typically send the form data to a server
-             // For demonstration, we'll just show a success message
-
-             const formData = new FormData(this);
-             const formName = this.classList.contains('reservation__form') ? 'Reservation' : 'Newsletter';
-
-             // Simulate form submission
-             setTimeout(() => {
-                 alert(`${formName} form submitted successfully!`);
-                 this.reset();
-             }, 1000);
-         });
-     });
  });

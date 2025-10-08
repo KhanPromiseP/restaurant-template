@@ -67,9 +67,9 @@
 
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full py-6 transition-all duration-300 z-50 glass-card">
+    <nav id="navbar" class="fixed top-0 left-0 w-full py-6 transition-all duration-300 z-50 bg-testimonies">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-primary font-serif text-3xl font-bold hover-scale">GASTRONOMIQUE</a>
+            <a href="#" class="text-secondary font-serif text-3xl font-bold hover-scale border-gray-700">GASTRONOMIQUE</a>
 
             <div class="hidden lg:flex items-center space-x-10">
                 <a href="#home" class="nav-link text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 font-medium relative group">Home</a>
@@ -77,7 +77,7 @@
                 <a href="#menu" class="nav-link text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 font-medium relative group">Menu</a>
                 <a href="#gallery" class="nav-link text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 font-medium relative group">Gallery</a>
                 <a href="#contact" class="nav-link text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 font-medium relative group">Contact</a>
-                <button id="theme-toggle" class="theme-toggle w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20">
+                <button id="theme-toggle" class="theme-toggle w-10 h-10 rounded-full bg-secondary/10 text-secondary flex items-center justify-center hover:bg-primary/20">
                     <i class="fas fa-moon" id="theme-icon"></i>
                 </button>
                 <a href="#reservation" class="bg-primary text-secondary px-6 py-2 rounded-full font-medium hover:bg-primary/90 transition-all duration-300 hover-scale">Reservations</a>
@@ -92,7 +92,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 w-full h-full bg-secondary/95 backdrop-blur-sm z-40 flex flex-col items-center justify-center opacity-0 invisible transition-all duration-300">
+    <div id="mobile-menu" class="fixed inset-0 w-full h-full bg-testimonies backdrop-blur-sm z-40 flex flex-col items-center justify-center opacity-0 invisible transition-all duration-300">
         <div class="flex flex-col items-center space-y-8">
             <a href="#home" class="mobile-nav-link text-2xl text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 relative group">Home</a>
             <a href="#about" class="mobile-nav-link text-2xl text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 relative group">About</a>
@@ -129,7 +129,7 @@
                             <span class="absolute -inset-4 bg-primary/10 rounded-lg transform rotate-1"></span>
                             <span class="relative font-gourmet text-6xl md:text-8xl lg:text-9xl tracking-tight leading-[0.85]">
                                 <span class="normal-case">
-                                    <span class="text-primary font-serif text-4xl font-bold hover-scale">GASTRONOMIQUE</span>
+                                    <span class="text-amber-400 border-gray-800 font-serif text-4xl font-bold hover-scale">GASTRONOMIQUE</span>
                                 </span>
                             </span>
                         </span>
@@ -141,7 +141,7 @@
 
             <!-- Professional Subtitle -->
             <p class="text-xl md:text-2xl font-light text-white max-w-3xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up [animation-delay:0.3s] [animation-fill-mode:forwards]">
-                <span class="bg-black/30 backdrop-blur-sm px-6 py-3 rounded-full inline-block">
+                <span class="bg-black/30 backdrop-blur-sm px-6 py-3 font-serif font-bold rounded-full inline-block">
                     Where culinary artistry meets unparalleled dining experience
                 </span>
             </p>
@@ -233,7 +233,7 @@
 
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-secondary">
+    <section id="about" class="py-20 bg-darker">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-primary uppercase tracking-widest text-sm">Our Story</span>
@@ -477,11 +477,11 @@
                 </div>
             </div>
 
-            <div class="text-center mt-16" data-aos="fade-up">
+            <!-- <div class="text-center mt-16" data-aos="fade-up">
                 <a href="#" class="inline-block bg-primary text-secondary px-8 py-3 rounded-full font-medium hover:bg-primary/90 transition-all duration-3 hover-scale">
                     View Full Menu
                 </a>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -570,10 +570,10 @@
     </div>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-secondary mb-1">
+    <section id="gallery" class="py-20 bg-testimonies mb-1">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-primary uppercase tracking-widest text-sm">Visual Feast</span>
+                <span class="text-secondary uppercase tracking-widest text-sm">Visual Feast</span>
                 <h2 class="text-4xl md:text-5xl font-serif font-bold mt-4">Food Gallery</h2>
                 <div class="flex items-center justify-center mt-6">
                     <div class="w-16 h-px bg-primary"></div>
@@ -891,42 +891,111 @@
                         </div>
                     </div>
                     <div class="max-w-2xl mx-auto p-6 bg-dark rounded-xl shadow-lg border border-gray-700">
-                        <form class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <input type="text" placeholder="Full Name" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300 placeholder-gray-400" required>
-                                </div>
-                                <div>
-                                    <input type="email" placeholder="Email Address" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300 placeholder-gray-400" required>
-                                </div>
-                                <div>
-                                    <input type="tel" placeholder="Phone Number" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300 placeholder-gray-400" required>
-                                </div>
-                                <div>
-                                    <select class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300">
-                                        <option value="" disabled selected class="text-gray-400">Number of Guests</option>
-                                        <option value="1">1 Person</option>
-                                        <option value="2">2 People</option>
-                                        <option value="3">3 People</option>
-                                        <option value="4">4 People</option>
-                                        <option value="5+">5+ People</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <input type="date" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-3">
-                                </div>
-                                <div>
-                                    <input type="time" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-3">
-                                </div>
-                            </div>
-                            <div>
-                                <textarea placeholder="Special Requests" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 h-32 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-3 placeholder-gray-400"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-secondary text-primary px-8 py-3 rounded-lg font-medium transition-all duration-1 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-800">
-                                Book Now
-                            </button>
-                        </form>
+                    <form 
+                    action="https://api.web3forms.com/submit" 
+                    method="POST" 
+                    class="space-y-6"
+                    >
+                    <!-- Web3Forms required hidden fields -->
+                    <input type="hidden" name="access_key" value="a7cbd3ee-f7c6-4338-8704-4f24a452170c">
+                    <input type="hidden" name="subject" value="New Gastronomique Booking">
+                    <input type="hidden" name="redirect" value="http://127.0.0.1:5503/thank-you.html">
+                    <input type="hidden" name="from_name" value="Gastronomique Booking Form">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <input type="text" name="fullName" placeholder="Full Name" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300 placeholder-gray-400" required>
+                        </div>
+                        <div>
+                            <input type="email" name="email" placeholder="Email Address" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300 placeholder-gray-400" required>
+                        </div>
+                        <div>
+                            <input type="tel" name="phone" placeholder="Phone Number" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300 placeholder-gray-400" required>
+                        </div>
+                        <div>
+                            <select name="guests" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300" required>
+                                <option value="" disabled selected class="text-gray-400">Number of Guests</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5+">5+ People</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="date" name="date" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300" required>
+                        </div>
+                        <div>
+                            <input type="time" name="time" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300" required>
+                        </div>
                     </div>
+                    <div>
+                        <textarea name="specialRequests" placeholder="Special Requests" class="w-full bg-testimonies text-secondary border border-gray-600 rounded-lg px-6 py-3 h-32 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 focus:outline-none transition-colors duration-300 placeholder-gray-400"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-secondary text-primary px-8 py-3 rounded-lg font-medium transition-all duration-100 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-800">
+                        Book Now
+                    </button>
+                </form>
+
+        </div>
+
+<!-- <script>
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const fullName = form.fullName.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const guests = form.guests.value;
+    const date = form.date.value;
+    const time = form.time.value;
+    const requests = form.specialRequests.value.trim() || "None";
+
+    const message = `📌 *Booking Request* 📌
+    
+    *Name:* ${fullName}
+    *Email:* ${email}
+    *Phone:* ${phone}
+    *Guests:* ${guests}
+    *Date:* ${date}
+    *Time:* ${time}
+    *Special Requests:* ${requests}
+
+    Thank you for your booking! We will get back to you shortly.`;
+
+    const whatsappNumber = "YOUR_NUMBER"; // in international format, e.g., 237612345678
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    // Detect if user is on mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if(isMobile){
+        // Mobile users: open WhatsApp directly
+        window.open(whatsappURL, '_blank');
+    } else {
+        // Desktop users: show a modal with instructions
+        const modal = document.createElement('div');
+        modal.innerHTML = `
+            <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                <div class="bg-dark rounded-xl p-6 max-w-md w-full shadow-lg border border-gray-700 text-secondary">
+                    <h2 class="text-xl font-semibold mb-4">Booking Request</h2>
+                    <p>It seems you are on a desktop without WhatsApp logged in.</p>
+                    <p class="mt-2">Please copy the message below and send it to our WhatsApp:</p>
+                    <textarea class="w-full mt-3 p-3 rounded-lg bg-testimonies text-secondary border border-gray-600 h-40" readonly>${message}</textarea>
+                    <button id="closeModal" class="mt-4 w-full bg-secondary text-primary px-6 py-2 rounded-lg hover:scale-[1.02] transition-all duration-100">Close</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        document.getElementById('closeModal').addEventListener('click', () => {
+            modal.remove();
+        });
+    }
+});
+</script> -->
+
                     <div class="mt-6 text-center">
                         <p class="text-gray-400">Book your appointment today from your home comfort!!!</p>
                     </div>
@@ -960,7 +1029,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-secondary">
+    <section id="contact" class="py-20 bg-testimonies">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-primary uppercase tracking-widest text-sm">Get in Touch</span>
@@ -1095,6 +1164,7 @@
                     </ul>
                 </div>
 
+
                 <div>
                     <h4 class="text-xl font-serif font-bold mb-6 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-primary">Opening Hours</h4>
                     <ul class="space-y-3 text-gray-400">
@@ -1115,7 +1185,7 @@
     </footer>
 
     <!-- Back to Top -->
-    <a href="#home" id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-secondary rounded-full flex items-center justify-center text-xl opacity-0 invisible transition-all duration-300 hover:bg-primary/90 hover-scale">
+    <a href="#home" id="back-to-top" class="fixed bottom-8 left-8 w-12 h-12 bg-primary text-secondary rounded-full flex items-center justify-center text-xl opacity-0 invisible transition-all duration-300 hover:bg-primary/90 hover-scale">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -1124,6 +1194,1389 @@
 
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
+
+
+
+<!-- Add this optimized chatbot to your HTML -->
+<div id="chatbot-container" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+  <button id="chatbot-toggle" class="w-14 h-14 sm:w-16 sm:h-16 bg-primary text-secondary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 relative">
+    <i class="fas fa-comment-alt text-lg sm:text-xl"></i>
+    <span class="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full border-2 border-white"></span>
+  </button>
+  
+  <div id="chatbot-window" class="hidden fixed sm:absolute inset-0 sm:inset-auto sm:bottom-20 sm:right-0 w-full h-full sm:w-[420px] sm:h-[600px] max-w-full max-h-full sm:max-w-[95vw] sm:max-h-[85vh] bg-white dark:bg-gray-800 rounded-none sm:rounded-xl shadow-2xl border-0 sm:border border-gray-200 dark:border-gray-700 flex flex-col">
+    <!-- Header with enhanced shadow -->
+    <div class="bg-gradient-to-r from-primary to-primary-dark text-white p-4 rounded-t-none sm:rounded-t-xl flex items-center justify-between shadow-lg">
+      <div class="flex items-center space-x-3">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=44&h=44&fit=crop&crop=face" 
+               alt="Kelly" 
+               class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-white/90 shadow-sm">
+          <span class="absolute bottom-0 right-0 w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full border-2 border-white animate-pulse"></span>
+        </div>
+        <div>
+          <h3 class="font-semibold text-base sm:text-lg">Kelly</h3>
+          <p class="text-xs text-gray-400/90 typing-status">Online • Ready to help</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <button id="chatbot-close" class="w-8 h-8 text-gray-500 hover:text-gray-800 transition-colors flex items-center justify-center rounded-full hover:bg-white/10">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Messages Container -->
+    <div id="chat-messages" class="flex-1 overflow-y-auto  p-4 space-y-3 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      <!-- Messages will be added here -->
+    </div>
+    
+    <!-- Quick Replies -->
+    <div id="quick-replies" class="px-4 pb-2 hidden">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button class="quick-reply-btn bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white text-xs px-3 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+          Opening hours
+        </button>
+        <button class="quick-reply-btn bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white text-xs px-3 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+          Reservation
+        </button>
+        <button class="quick-reply-btn bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white text-xs px-3 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+          View menu
+        </button>
+      </div>
+    </div>
+    
+    <!-- Input Area -->
+    <div class="p-4 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+      <div class="flex space-x-3">
+        <div class="flex-1 relative">
+          <input 
+            type="text" 
+            id="chat-input" 
+            placeholder="Ask about hours, menu, reservations..." 
+            class="w-full px-4 py-3 text-sm border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-black bg-white outline-none placeholder-gray-500 shadow-sm transition-all duration-200 caret-primary"
+          >
+          <!-- Blinking cursor indicator -->
+          <div id="cursor-indicator" class="absolute inset-y-0 left-4 flex items-center pointer-events-none hidden">
+            <div class="w-0.5 h-6 bg-primary animate-blink"></div>
+          </div>
+        </div>
+        <button id="chat-send" class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-dark transition-colors shadow-sm">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+// Optimized Chatbot functionality with mobile support
+document.addEventListener('DOMContentLoaded', function() {
+  const chatbotToggle = document.getElementById('chatbot-toggle');
+  const chatbotWindow = document.getElementById('chatbot-window');
+  const chatbotClose = document.getElementById('chatbot-close');
+  const chatMessages = document.getElementById('chat-messages');
+  const chatInput = document.getElementById('chat-input');
+  const chatSend = document.getElementById('chat-send');
+  const quickReplies = document.getElementById('quick-replies');
+  const typingStatus = document.querySelector('.typing-status');
+  const cursorIndicator = document.getElementById('cursor-indicator');
+  
+  let isChatbotOpen = false;
+  let messageCount = 0;
+  let isTyping = false;
+
+  
+  
+  // Enhanced local responses for immediate answers
+  const localResponses = {
+    hours: "We're open Monday to Friday from 9:00 AM to 10:00 PM, and Saturday & Sunday from 11:00 AM to 10:00 PM. 🕘 Happy Hour 4-6 PM daily!",
+    location: "We're at 123 Gourmet Avenue, Culinary District, NY 10001. 🗺️ Valet parking available!",
+    reservations: "Call (555) 123-4567 or email reservations@gastronomique.com. 📞 Book in advance for best experience!",
+    menu: "Michelin-starred menu: Seared Scallops, Filet Mignon, Chocolate Soufflé & more! 🍽️",
+    greeting: "Hello! 👋 I'm Kelly from Gastronomique! 🌟 Ask me about hours, menu, reservations, or anything about our restaurant!"
+  };
+  
+  // Initialize chatbot
+  function initChatbot() {
+    // Add welcome message with slight delay
+    setTimeout(() => {
+      addMessage(localResponses.greeting, 'bot');
+      showQuickReplies();
+    }, 1000);
+    
+    setupEventListeners();
+    setupMobileOptimizations();
+  }
+  
+  function setupMobileOptimizations() {
+    // Prevent body scroll when chatbot is open on mobile
+    const updateBodyScroll = () => {
+      if (window.innerWidth < 640 && isChatbotOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    };
+    
+    // Update on resize
+    window.addEventListener('resize', updateBodyScroll);
+  }
+  
+  function setupEventListeners() {
+    // Chatbot toggle
+    chatbotToggle.addEventListener('click', function() {
+      isChatbotOpen = !isChatbotOpen;
+      chatbotWindow.classList.toggle('hidden', !isChatbotOpen);
+      
+      // Update body scroll for mobile
+      if (window.innerWidth < 640) {
+        document.body.style.overflow = isChatbotOpen ? 'hidden' : '';
+      }
+      
+      if (isChatbotOpen) {
+        chatInput.focus();
+      }
+    });
+    
+    // Chatbot close
+    chatbotClose.addEventListener('click', function() {
+      isChatbotOpen = false;
+      chatbotWindow.classList.add('hidden');
+      
+      // Restore body scroll
+      if (window.innerWidth < 640) {
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Close chatbot when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+      if (isChatbotOpen && window.innerWidth < 640 && 
+          !chatbotWindow.contains(e.target) && 
+          !chatbotToggle.contains(e.target)) {
+        isChatbotOpen = false;
+        chatbotWindow.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Send message on button click
+    chatSend.addEventListener('click', sendMessage);
+    
+    // Send message on Enter key
+    chatInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' && !isTyping) {
+        sendMessage();
+      }
+    });
+    
+    // Cursor indicator handling
+    chatInput.addEventListener('focus', function() {
+      cursorIndicator.classList.remove('hidden');
+      updateCursorPosition();
+    });
+    
+    chatInput.addEventListener('blur', function() {
+      cursorIndicator.classList.add('hidden');
+    });
+    
+    chatInput.addEventListener('input', updateCursorPosition);
+    chatInput.addEventListener('click', updateCursorPosition);
+    chatInput.addEventListener('keyup', updateCursorPosition);
+    
+    // Quick reply functionality
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('quick-reply-btn') && !isTyping) {
+        chatInput.value = e.target.textContent;
+        sendMessage();
+      }
+    });
+    
+    // Auto-open chatbot after 5 seconds (first visit only) - disabled on mobile
+    setTimeout(() => {
+      if (!isChatbotOpen && !sessionStorage.getItem('chatbotShown') && window.innerWidth >= 640) {
+        chatbotToggle.click();
+        sessionStorage.setItem('chatbotShown', 'true');
+      }
+    }, 5000);
+  }
+  
+  function updateCursorPosition() {
+    // Simple cursor positioning
+    if (chatInput.value.length === 0) {
+      cursorIndicator.style.left = '16px';
+    } else {
+      cursorIndicator.classList.add('hidden');
+    }
+  }
+  
+  function addMessage(text, sender, instant = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'} items-end space-x-3 message-item ${instant ? 'instant' : 'fade-in'}`;
+    
+    if (sender === 'bot') {
+      messageDiv.innerHTML = `
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=40&h=40&fit=crop&crop=face" 
+             alt="Kelly" 
+             class="w-8 h-8 rounded-full object-cover flex-shrink-0 shadow-sm">
+        <div class="max-w-[85%] sm:max-w-[75%] bg-white dark:bg-gray-700 rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
+          <p class="text-gray-800 dark:text-white text-sm leading-relaxed">${text}</p>
+          <span class="text-xs text-gray-500 dark:text-gray-400 block mt-1">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+        </div>
+      `;
+    } else {
+      messageDiv.innerHTML = `
+        <div class="max-w-[85%] sm:max-w-[75%] bg-primary text-white rounded-2xl rounded-br-md px-4 py-3 shadow-sm">
+          <p class="text-sm leading-relaxed">${text}</p>
+          <span class="text-xs text-white/80 block mt-1 text-right">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+        </div>
+        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-xs font-semibold flex-shrink-0 shadow-sm">
+          You
+        </div>
+      `;
+    }
+    
+    chatMessages.appendChild(messageDiv);
+    
+    if (!instant) {
+      messageDiv.style.opacity = '0';
+      messageDiv.style.transform = 'translateY(10px)';
+      setTimeout(() => {
+        messageDiv.style.transition = 'all 0.3s ease';
+        messageDiv.style.opacity = '1';
+        messageDiv.style.transform = 'translateY(0)';
+      }, 10);
+    }
+    
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    messageCount++;
+    
+    // Show quick replies after bot messages (except first welcome)
+    if (sender === 'bot' && messageCount > 1) {
+      setTimeout(showQuickReplies, 500);
+    }
+  }
+  
+  function showQuickReplies() {
+    quickReplies.classList.remove('hidden');
+    quickReplies.style.opacity = '0';
+    setTimeout(() => {
+      quickReplies.style.transition = 'opacity 0.3s ease';
+      quickReplies.style.opacity = '1';
+    }, 10);
+  }
+  
+  function hideQuickReplies() {
+    quickReplies.style.transition = 'opacity 0.2s ease';
+    quickReplies.style.opacity = '0';
+    setTimeout(() => {
+      quickReplies.classList.add('hidden');
+    }, 200);
+  }
+  
+  function updateTypingStatus(typing) {
+    isTyping = typing;
+    if (typing) {
+      typingStatus.textContent = 'Online • Typing...';
+      typingStatus.classList.add('text-green-400');
+    } else {
+      typingStatus.textContent = 'Online • Ready to help';
+      typingStatus.classList.remove('text-green-400');
+    }
+  }
+  
+  // Check if question can be answered locally
+  function getLocalResponse(message) {
+    const lowerMessage = message.toLowerCase();
+    
+    if (/(hi|hello|hey)/i.test(lowerMessage)) {
+      return { response: localResponses.greeting, delay: 800 };
+    } else if (/(hour|open|time|close)/i.test(lowerMessage)) {
+      return { response: localResponses.hours, delay: 1200 };
+    } else if (/(where|location|address)/i.test(lowerMessage)) {
+      return { response: localResponses.location, delay: 1200 };
+    } else if (/(reservation|book|table)/i.test(lowerMessage)) {
+      return { response: localResponses.reservations, delay: 1500 };
+    } else if (/(menu|food|dish|eat)/i.test(lowerMessage)) {
+      return { response: localResponses.menu, delay: 1400 };
+    }
+    
+    return null; // No local response available
+  }
+  
+  async function sendMessage() {
+    const message = chatInput.value.trim();
+    if (!message || isTyping) return;
+
+    // Log user message
+    chatManager.logChat(message, 'user');
+   
+
+    addMessage(message, 'user', true);
+    chatInput.value = '';
+    hideQuickReplies();
+    cursorIndicator.classList.remove('hidden');
+    updateCursorPosition();
+
+    // First try local response
+    const localResponse = getLocalResponse(message);
+    if (localResponse) {
+      updateTypingStatus(true);
+      
+      // Show typing indicator for calculated delay
+      const typingIndicator = addTypingIndicator();
+      
+      setTimeout(() => {
+        removeTypingIndicator(typingIndicator);
+        updateTypingStatus(false);
+        addMessage(localResponse.response, 'bot');
+      }, localResponse.delay);
+      
+      return;
+    }
+
+    // For AI responses, show longer typing indicator
+    updateTypingStatus(true);
+    const typingIndicator = addTypingIndicator();
+    
+    try {
+      const response = await fetch('/.netlify/functions/chatbot', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+      
+      // Use the delay provided by the backend or default to 2 seconds
+      const delay = data.delay || 2000;
+      
+      // Remove typing indicator after calculated delay
+      setTimeout(() => {
+        removeTypingIndicator(typingIndicator);
+        updateTypingStatus(false);
+        
+        
+        if (data && data.response) {
+          addMessage(data.response, 'bot');
+        } else {
+          addMessage("I'd love to help! 🌟 For detailed information, please call us at (555) 123-4567.", 'bot');
+        }
+
+        // Log bot response
+        chatManager.logChat(responseText, 'bot');
+      }, delay);
+      
+    } catch (err) {
+      console.error('Chatbot error:', err);
+      removeTypingIndicator(typingIndicator);
+      updateTypingStatus(false);
+      
+      // Fallback with realistic delay
+      setTimeout(() => {
+        addMessage(localResponses.menu, 'bot');
+      }, 1500);
+    }
+  }
+  
+  function addTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'flex justify-start items-end space-x-3 typing-indicator';
+    typingDiv.innerHTML = `
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=40&h=40&fit=crop&crop=face" 
+           alt="Kelly" 
+           class="w-8 h-8 rounded-full object-cover flex-shrink-0 shadow-sm">
+      <div class="bg-white dark:bg-gray-700 rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
+        <div class="flex space-x-1.5">
+          <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+          <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+          <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+        </div>
+      </div>
+    `;
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return typingDiv;
+  }
+  
+  function removeTypingIndicator(typingIndicator) {
+    if (typingIndicator && typingIndicator.parentNode) {
+      typingIndicator.style.transition = 'opacity 0.2s ease';
+      typingIndicator.style.opacity = '0';
+      setTimeout(() => {
+        if (typingIndicator.parentNode) {
+          chatMessages.removeChild(typingIndicator);
+        }
+      }, 200);
+    }
+  }
+  
+  // Initialize the chatbot
+  initChatbot();
+
+
+  // Enhanced chat logging and daily email system
+class ChatManager {
+    constructor() {
+        this.chats = this.loadChats();
+        this.lastEmailDate = this.getLastEmailDate();
+        this.setupDailyCheck();
+    }
+
+    loadChats() {
+        try {
+            return JSON.parse(localStorage.getItem('gastronomique_chats') || '[]');
+        } catch {
+            return [];
+        }
+    }
+
+    saveChats() {
+        try {
+            localStorage.setItem('gastronomique_chats', JSON.stringify(this.chats));
+        } catch (error) {
+            console.error('Failed to save chats:', error);
+        }
+    }
+
+    getLastEmailDate() {
+        return localStorage.getItem('last_email_date') || '';
+    }
+
+    setLastEmailDate(date) {
+        localStorage.setItem('last_email_date', date);
+    }
+
+    logChat(message, sender, timestamp = new Date()) {
+        const chatEntry = {
+            message,
+            sender,
+            timestamp: timestamp.toISOString(),
+            date: timestamp.toDateString()
+        };
+        
+        this.chats.push(chatEntry);
+        this.saveChats();
+        
+        // Check if we should send daily summary
+        this.checkAndSendDailySummary();
+    }
+
+    getTodaysChats() {
+        const today = new Date().toDateString();
+        return this.chats.filter(chat => chat.date === today);
+    }
+
+    getYesterdaysChats() {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        return this.chats.filter(chat => chat.date === yesterday.toDateString());
+    }
+
+    setupDailyCheck() {
+        // Check every hour if we need to send daily summary
+        setInterval(() => {
+            this.checkAndSendDailySummary();
+        }, 60 * 60 * 1000); // Check every hour
+    }
+
+    checkAndSendDailySummary() {
+        const today = new Date().toDateString();
+        const lastEmailDate = this.getLastEmailDate();
+        
+        // Only send once per day, and only if we have chats
+        if (lastEmailDate !== today && this.shouldSendDailySummary()) {
+            this.sendDailySummary();
+            this.setLastEmailDate(today);
+        }
+    }
+
+    shouldSendDailySummary() {
+        const yesterdayChats = this.getYesterdaysChats();
+        return yesterdayChats.length > 0;
+    }
+
+    formatDailyEmail() {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        const dateString = yesterday.toDateString();
+        const yesterdayChats = this.getYesterdaysChats();
+
+        if (yesterdayChats.length === 0) {
+            return null;
+        }
+
+        let htmlContent = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+                    .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+                    .header { background: linear-gradient(135deg, #d4af37, #b8941f); color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
+                    .chat-list { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+                    .chat-item { padding: 15px; border-bottom: 1px solid #e0e0e0; }
+                    .chat-item:last-child { border-bottom: none; }
+                    .user-message { background: #e8f4fd; margin-left: 50px; }
+                    .bot-message { background: #f0f0f0; margin-right: 50px; }
+                    .timestamp { font-size: 12px; color: #666; margin-bottom: 5px; }
+                    .message { font-size: 14px; line-height: 1.4; }
+                    .stats { background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 20px 0; text-align: center; }
+                    .stat-number { font-size: 24px; font-weight: bold; color: #d4af37; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="header">
+                        <h1>🍽️ Gastronomique Daily Chat Report</h1>
+                        <p>Chat conversations from ${dateString}</p>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-number">${yesterdayChats.length}</div>
+                        <div>Total Messages</div>
+                    </div>
+        `;
+
+        // Group chats by approximate time periods
+        const groupedChats = this.groupChatsByTime(yesterdayChats);
+        
+        Object.keys(groupedChats).forEach(timePeriod => {
+            htmlContent += `<h3>${timePeriod}</h3>`;
+            groupedChats[timePeriod].forEach(chat => {
+                const isUser = chat.sender === 'user';
+                htmlContent += `
+                    <div class="chat-item ${isUser ? 'user-message' : 'bot-message'}">
+                        <div class="timestamp">
+                            ${new Date(chat.timestamp).toLocaleTimeString()} • 
+                            ${isUser ? '👤 Customer' : '🤖 Kelly'}
+                        </div>
+                        <div class="message">${this.escapeHtml(chat.message)}</div>
+                    </div>
+                `;
+            });
+        });
+
+        htmlContent += `
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: #666;">
+                        <p>This report was automatically generated by Gastronomique Chat System</p>
+                        <p>💼 Total conversations analyzed: ${this.countUniqueConversations(yesterdayChats)}</p>
+                    </div>
+                </div>
+            </body>
+            </html>
+        `;
+
+        return htmlContent;
+    }
+
+    groupChatsByTime(chats) {
+        const groups = {
+            '🌅 Morning (6 AM - 12 PM)': [],
+            '☀️ Afternoon (12 PM - 6 PM)': [],
+            '🌙 Evening (6 PM - 12 AM)': [],
+            '🌜 Night (12 AM - 6 AM)': []
+        };
+
+        chats.forEach(chat => {
+            const hour = new Date(chat.timestamp).getHours();
+            let period;
+            
+            if (hour >= 6 && hour < 12) period = '🌅 Morning (6 AM - 12 PM)';
+            else if (hour >= 12 && hour < 18) period = '☀️ Afternoon (12 PM - 6 PM)';
+            else if (hour >= 18 && hour < 24) period = '🌙 Evening (6 PM - 12 AM)';
+            else period = '🌜 Night (12 AM - 6 AM)';
+            
+            groups[period].push(chat);
+        });
+
+        // Remove empty periods
+        Object.keys(groups).forEach(period => {
+            if (groups[period].length === 0) {
+                delete groups[period];
+            }
+        });
+
+        return groups;
+    }
+
+    countUniqueConversations(chats) {
+        // Simple heuristic: count user messages as conversation starters
+        return chats.filter(chat => chat.sender === 'user').length;
+    }
+
+    escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    async sendDailySummary() {
+        const emailContent = this.formatDailyEmail();
+        
+        if (!emailContent) {
+            console.log('No chats to send for daily summary');
+            return;
+        }
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    access_key: 'a7cbd3ee-f7c6-4338-8704-4f24a452170c',
+                    subject: `📊 Gastronomique Daily Chat Report - ${new Date().toDateString()}`,
+                    from_name: 'Gastronomique Chat Analytics',
+                    html: emailContent,
+                    to: 'khanpennpromise@gmail.com, khanpromise30@gmail.com' // Add your emails here eg;  manager@domain.com, team@domain.com
+                })
+            });
+
+            const result = await response.json();
+            
+            if (result.success) {
+                console.log('Daily chat report sent successfully');
+                // Optional: Show notification
+                this.showNotification('Daily chat report has been sent!');
+            } else {
+                console.error('Failed to send daily report:', result);
+            }
+        } catch (error) {
+            console.error('Error sending daily report:', error);
+        }
+    }
+
+    showNotification(message) {
+        // Create a subtle notification
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10000;
+            font-size: 14px;
+        `;
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 5000);
+    }
+
+    // Manual trigger for testing
+    manualSendDailyReport() {
+        this.sendDailySummary();
+    }
+}
+
+// Initialize chat manager
+const chatManager = new ChatManager();
+});
+
+// Add CSS for animations and styling
+const style = document.createElement('style');
+style.textContent = `
+  /* Mobile-optimized chatbot styles */
+  @media (max-width: 639px) {
+    #chatbot-window {
+      border-radius: 0 !important;
+      border: none !important;
+    }
+    
+    #chatbot-window .rounded-t-xl {
+      border-radius: 0 !important;
+    }
+  }
+
+  /* Enhanced header shadow */
+  .bg-gradient-to-r.from-primary.to-primary-dark {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Message animations */
+  .message-item:not(.instant) {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .typing-indicator {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+  
+  .fade-in {
+    animation: fadeInUp 0.3s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Blinking cursor animation */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+  
+  /* Bounce animation for typing dots */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+  
+  /* Pulse animation for online status */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  /* Custom scrollbar for chat messages */
+  #chat-messages {
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 transparent;
+  }
+  
+  #chat-messages::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  #chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 5px 0;
+  }
+  
+  #chat-messages::-webkit-scrollbar-thumb {
+    background-color: #d4af37;
+    border-radius: 2px;
+  }
+  
+  #chat-messages::-webkit-scrollbar-thumb:hover {
+    background-color: #b8941f;
+  }
+  
+  /* Smooth transitions for chatbot window */
+  #chatbot-window {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  #chatbot-window.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
+  
+  #chatbot-window:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Enhanced button hover effects */
+  #chatbot-toggle:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  #chat-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Ensure text input is always black */
+  .text-black {
+    color: #000 !important;
+  }
+  
+  /* Input focus states */
+  #chat-input:focus {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  /* Dark mode overrides for input */
+  @media (prefers-color-scheme: dark) {
+    #chat-input {
+      background-color: white !important;
+      color: black !important;
+    }
+    
+    #chat-input::placeholder {
+      color: #6b7280 !important;
+    }
+  }
+`;
+document.head.appendChild(style);
+</script>
+
+<!-- Promotional Popup Button -->
+<div id="promo-button-container" class="fixed bottom-24 left-4 sm:bottom-28 sm:left-6 z-50">
+    <div class="relative">
+        <!-- Animated Hand Pointer -->
+        <div class="absolute -top-8 -left-8 sm:-top-10 sm:-left-10 animate-bounce">
+            <div class="text-2xl sm:text-3xl">👇</div>
+        </div>
+        
+        <!-- Floating Stars -->
+        <div class="absolute -top-2 -right-2 animate-ping">
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+        </div>
+        <div class="absolute -bottom-1 -left-2 animate-pulse">
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+        </div>
+        
+        <button id="promo-button" class="group relative bg-gradient-to-r from-green-600 to-emerald-700 text-white px-6 py-4 rounded-full font-bold shadow-2xl hover:shadow-green-500/40 transition-all duration-500 hover:scale-110 border-2 border-white/20 animate-pulse hover:animate-none">
+            <span class="flex items-center space-x-2">
+                <i class="fas fa-bolt text-yellow-300"></i>
+                <span class="text-sm sm:text-base">GET THIS DEAL!</span>
+                <i class="fas fa-arrow-right text-yellow-300"></i>
+            </span>
+            
+            <!-- Glow effect -->
+            <span class="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 opacity-0 group-hover:opacity-100 -z-10 blur-md transition-opacity duration-500"></span>
+        </button>
+        
+        <!-- Limited time badge -->
+        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
+            LIMITED OFFER!
+        </div>
+    </div>
+</div>
+
+<!-- Promotional Popup Modal -->
+<div id="promo-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] hidden items-center justify-center p-3 sm:p-4">
+    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-2xl max-w-4xl w-full max-h-[95vh] overflow-hidden border border-gray-300 dark:border-gray-700 relative">
+        <!-- Simple Close Button -->
+        <button id="promo-close" class="absolute top-2 right-2 w-8 h-8 bg-gray-600 hover:bg-gray-800 text-white rounded-full flex items-center justify-center text-xs transition-colors duration-300 z-10">
+            ×
+        </button>
+        
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-4 sm:p-6 border-b border-gray-600">
+            <!-- Language Toggle -->
+            <div class="flex justify-end mb-3 sm:mb-4 mr-18">
+                <div class="bg-white/10 rounded-full p-2 flex backdrop-blur-sm ml-18">
+                    <button class="language-toggle active px-3 sm:px-4 py-1 rounded-full text-white bg-white/20 text-xs sm:text-sm font-medium transition-all duration-300" data-lang="en">
+                        EN
+                    </button>
+                    <button class="language-toggle px-3 sm:px-4 py-1 rounded-full text-white/70 hover:text-white text-xs sm:text-sm font-medium transition-all duration-300" data-lang="fr">
+                        FR
+                    </button>
+                </div>
+            </div>
+            
+            <h2 id="promo-title" class="text-xl sm:text-2xl font-bold text-white text-center">Complete Web Solution Package</h2>
+            <p id="promo-subtitle" class="text-gray-300 text-center mt-2 text-sm sm:text-base">Everything you need to launch professionally</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="p-4 sm:p-6 overflow-y-auto max-h-[50vh] sm:max-h-[55vh]">
+            <!-- English Content -->
+            <div id="content-en" class="space-y-4 sm:space-y-6">
+                <!-- AI Chatbot Feature -->
+                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-robot text-green-600 dark:text-green-400 mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-gray-800 dark:text-white text-sm sm:text-base mb-2">Free AI Chatbot - Your 24/7 Support Team</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
+                                We provide a completely FREE AI chatbot trained specifically for your business. It responds exactly like a human and handles customer inquiries 24/7 - no extra costs!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                    <!-- Column 1 -->
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-bolt text-blue-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Lightning Fast</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Optimized for speed and performance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-mobile-alt text-green-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Fully Responsive</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Perfect on all devices and screens</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-envelope text-red-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Contact Forms</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Working forms with email notifications</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-adjust text-purple-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Light/Dark Mode</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Automatic theme switching</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-share-alt text-indigo-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Social Media</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Integrated social connections</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-server text-orange-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Free Hosting</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">1 year of free hosting included</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-globe text-cyan-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Free Domain</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Professional domain for 1 year</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fab fa-whatsapp text-green-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">One-Click WhatsApp</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Direct customer messaging</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Feature -->
+                <div class="flex items-start space-x-2 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                    <i class="fas fa-headset text-blue-500 mt-1 text-sm"></i>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Amazing Support</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">Dedicated assistance and maintenance</p>
+                    </div>
+                </div>
+
+                <!-- Trust & Urgency -->
+                <div class="space-y-3">
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-3 border border-yellow-200 dark:border-yellow-800">
+                        <p class="text-yellow-800 dark:text-yellow-200 text-xs sm:text-sm text-center font-medium">
+                            🤔 This is NOT too good to be true! We're helping small businesses succeed online.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-3 border border-red-200 dark:border-red-800">
+                        <p class="text-red-800 dark:text-red-200 text-xs sm:text-sm text-center font-bold">
+                            ⏰ Contact us today before this offer ends!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- French Content -->
+            <div id="content-fr" class="space-y-4 sm:space-y-6 hidden">
+                <!-- AI Chatbot Feature -->
+                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-robot text-green-600 dark:text-green-400 mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-gray-800 dark:text-white text-sm sm:text-base mb-2">Chatbot IA Gratuit - Votre Équipe Support 24h/24</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
+                                Nous fournissons un chatbot IA complètement GRATUIT formé spécifiquement pour votre entreprise. Il répond exactement comme un humain et gère les demandes clients 24h/24 - sans frais supplémentaires !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                    <!-- Column 1 -->
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-bolt text-blue-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Ultra-Rapide</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Optimisé pour vitesse et performance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-mobile-alt text-green-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Complètement Responsive</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Parfait sur tous appareils</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-envelope text-red-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Formulaires de Contact</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Formulaires fonctionnels avec notifications</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-adjust text-purple-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Mode Clair/Sombre</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Changement automatique de thème</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-share-alt text-indigo-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Réseaux Sociaux</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Connexions sociales intégrées</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-server text-orange-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Hébergement Gratuit</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">1 an d'hébergement gratuit inclus</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fas fa-globe text-cyan-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Domaine Gratuit</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Domaine professionnel 1 an gratuit</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <i class="fab fa-whatsapp text-green-500 mt-1 text-sm"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">WhatsApp en Un Clic</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Messagerie client directe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Feature -->
+                <div class="flex items-start space-x-2 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                    <i class="fas fa-headset text-blue-500 mt-1 text-sm"></i>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Support Exceptionnel</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">Assistance et maintenance dédiées</p>
+                    </div>
+                </div>
+
+                <!-- Trust & Urgency -->
+                <div class="space-y-3">
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-3 border border-yellow-200 dark:border-yellow-800">
+                        <p class="text-yellow-800 dark:text-yellow-200 text-xs sm:text-sm text-center font-medium">
+                            🤔 Ce n'est PAS trop beau pour être vrai ! Nous aidons les petites entreprises à réussir en ligne.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-3 border border-red-200 dark:border-red-800">
+                        <p class="text-red-800 dark:text-red-200 text-xs sm:text-sm text-center font-bold">
+                            ⏰ Contactez-nous aujourd'hui avant la fin de cette offre !
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="text-center mb-3 sm:mb-4">
+                <p id="contact-note" class="text-gray-800 dark:text-white font-bold text-sm sm:text-base">
+                    Ready to launch your professional website?
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 text-xs mt-1">
+                    Contact us now to get started!
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/237612345678?text=Hello!%20I'm%20interested%20in%20your%20complete%20web%20solution%20package%20from%20Gastronomique%20website" 
+                   target="_blank"
+                   class="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-green-500/30 flex-1 sm:flex-none">
+                    <i class="fab fa-whatsapp"></i>
+                    <span id="whatsapp-text" class="text-sm sm:text-base">WhatsApp</span>
+                </a>
+                
+                <!-- Email Button -->
+                <a href="mailto:promisecreative@email.com?subject=Web Solution Package Inquiry - Gastronomique&body=Hello! I'm interested in your complete web solution package. Please provide more details."
+                   class="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/30 flex-1 sm:flex-none">
+                    <i class="fas fa-envelope"></i>
+                    <span id="email-text" class="text-sm sm:text-base">Email</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Promotional Popup Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const promoButton = document.getElementById('promo-button');
+    const promoModal = document.getElementById('promo-modal');
+    const promoClose = document.getElementById('promo-close');
+    const languageToggles = document.querySelectorAll('.language-toggle');
+    const contentEn = document.getElementById('content-en');
+    const contentFr = document.getElementById('content-fr');
+    const promoTitle = document.getElementById('promo-title');
+    const promoSubtitle = document.getElementById('promo-subtitle');
+    const whatsappText = document.getElementById('whatsapp-text');
+    const emailText = document.getElementById('email-text');
+    const contactNote = document.getElementById('contact-note');
+
+    // Text content for different languages
+    const translations = {
+        en: {
+            title: "Complete Web Solution Package",
+            subtitle: "Everything you need to launch professionally",
+            whatsapp: "WhatsApp",
+            email: "Email",
+            note: "Ready to launch your professional website?"
+        },
+        fr: {
+            title: "Package Solution Web Complète",
+            subtitle: "Tout ce dont vous avez besoin pour lancer professionnellement",
+            whatsapp: "WhatsApp",
+            email: "Email",
+            note: "Prêt à lancer votre site web professionnel ?"
+        }
+    };
+
+    // Show popup when button is clicked
+    promoButton.addEventListener('click', function() {
+        promoModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        // Add entrance animation
+        setTimeout(() => {
+            const modalContent = promoModal.querySelector('div');
+            modalContent.style.transform = 'scale(1)';
+            modalContent.style.opacity = '1';
+        }, 10);
+    });
+
+    // Close popup
+    promoClose.addEventListener('click', closePopup);
+
+    // Close when clicking outside
+    promoModal.addEventListener('click', function(e) {
+        if (e.target === promoModal) {
+            closePopup();
+        }
+    });
+
+    // Close with ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !promoModal.classList.contains('hidden')) {
+            closePopup();
+        }
+    });
+
+    // Language toggle functionality
+    languageToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            
+            // Update active toggle
+            languageToggles.forEach(t => {
+                t.classList.remove('active', 'bg-white/20');
+                t.classList.add('text-white/70');
+            });
+            this.classList.add('active', 'bg-white/20');
+            this.classList.remove('text-white/70');
+            
+            // Update content
+            updateLanguage(lang);
+        });
+    });
+
+    function updateLanguage(lang) {
+        if (lang === 'en') {
+            contentEn.classList.remove('hidden');
+            contentFr.classList.add('hidden');
+        } else {
+            contentEn.classList.add('hidden');
+            contentFr.classList.remove('hidden');
+        }
+        
+        // Update dynamic text
+        promoTitle.textContent = translations[lang].title;
+        promoSubtitle.textContent = translations[lang].subtitle;
+        whatsappText.textContent = translations[lang].whatsapp;
+        emailText.textContent = translations[lang].email;
+        contactNote.textContent = translations[lang].note;
+    }
+
+    function closePopup() {
+        promoModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Auto-show popup after 10 seconds (first visit only)
+    setTimeout(() => {
+        if (!sessionStorage.getItem('promoShown')) {
+            promoButton.click();
+            sessionStorage.setItem('promoShown', 'true');
+        }
+    }, 10000);
+
+    // Add interactive effects to the button
+    promoButton.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1)';
+    });
+
+    promoButton.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
+});
+</script>
+
+<style>
+/* Additional styles for the promotional elements */
+#promo-modal > div {
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+/* Smooth scrolling for modal content */
+#promo-modal > div > div:nth-child(3) {
+    scrollbar-width: thin;
+    scrollbar-color: #6b7280 transparent;
+}
+
+#promo-modal > div > div:nth-child(3)::-webkit-scrollbar {
+    width: 6px;
+}
+
+#promo-modal > div > div:nth-child(3)::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#promo-modal > div > div:nth-child(3)::-webkit-scrollbar-thumb {
+    background-color: #6b7280;
+    border-radius: 3px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+    #promo-button-container {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #promo-button {
+        padding: 12px 20px;
+        font-size: 0.875rem;
+    }
+    
+    #promo-modal {
+        padding: 0.5rem;
+    }
+    
+    #promo-modal > div {
+        margin: 0;
+        max-height: 98vh;
+    }
+}
+
+/* Enhanced button animations */
+#promo-button {
+    animation: gentlePulse 2s infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(5, 150, 105, 0.4);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(5, 150, 105, 0.6);
+    }
+}
+
+#promo-button:hover {
+    animation: none;
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(5, 150, 105, 0.8);
+}
+
+.language-toggle.active {
+    color: white;
+    font-weight: 600;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 480px) {
+    #promo-button {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+    
+    #promo-button-container .absolute {
+        display: none; /* Hide hand pointer on very small screens */
+    }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 640px) {
+    body {
+        overflow-x: hidden;
+    }
+}
+</style>
 </body>
 
 </html>

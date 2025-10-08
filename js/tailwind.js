@@ -8,7 +8,7 @@
                       dark: '#d4b45f'
                   },
                   secondary: {
-                      light: '#1a1a1a',
+                      light: '#ffffff',
                       dark: '#2d2d2d'
                   },
                   background: {

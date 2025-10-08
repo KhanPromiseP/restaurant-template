@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You - Booking Confirmed</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/main.css">
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #1F1F1F;
+        color: #F8F8F8;
+    }
+    .logo {
+        max-width: 150px;
+    }
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.2s;
+    }
+    .social-icon:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen px-8 py-18">
+     <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full py-6 transition-all duration-300 z-50 bg-testimonies">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html#home" class="text-primary font-serif text-3xl font-bold hover-scale">GASTRONOMIQUE</a>
+
+            <div class="hidden lg:flex items-center space-x-10">
+                <a href="index.html#home" class="nav-link text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 font-medium relative group">Home</a>
+                <a href="index.html#about" class="nav-link text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 font-medium relative group">About</a>
+                <a href="index.html#menu" class="nav-link text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 font-medium relative group">Menu</a>
+                <a href="index.html#gallery" class="nav-link text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 font-medium relative group">Gallery</a>
+                <a href="index.html#contact" class="nav-link text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 font-medium relative group">Contact</a>
+                <button id="theme-toggle" class="theme-toggle w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <a href="index.html#reservation" class="bg-primary text-secondary px-6 py-2 rounded-full font-medium hover:bg-primary/90 transition-all duration-300 hover-scale">Reservations</a>
+            </div>
+
+            <button id="mobile-menu-button" class="lg:hidden flex flex-col space-y-2">
+                <span class="w-8 h-0.5 bg-current transition-all duration-300"></span>
+                <span class="w-8 h-0.5 bg-current transition-all duration-300"></span>
+                <span class="w-8 h-0.5 bg-current transition-all duration-300"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 w-full h-full bg-testimonies backdrop-blur-sm z-40 flex flex-col items-center justify-center opacity-0 invisible transition-all duration-300">
+        <div class="flex flex-col items-center space-y-8">
+            <a href="index.html#home" class="mobile-nav-link text-2xl text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 relative group">Home</a>
+            <a href="index.html#about" class="mobile-nav-link text-2xl text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 relative group">About</a>
+            <a href="index.html#menu" class="mobile-nav-link text-2xl text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 relative group">Menu</a>
+            <a href="index.html#gallery" class="mobile-nav-link text-2xl text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 relative group">Gallery</a>
+            <a href="index.html#contact" class="mobile-nav-link text-2xl text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 relative group">Contact</a>
+            <a href="index.html#reservation" class="mt-6 bg-primary text-secondary px-8 py-3 rounded-full text-xl font-medium hover:bg-primary/90 transition-all duration-300 hover-scale">Reservations</a>
+        </div>
+        <button id="theme-toggle-mobile" class="theme-toggle mt-12 w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl hover:bg-primary/20">
+            <i class="fas fa-moon" id="theme-icon-mobile"></i>
+        </button>
+        <button id="mobile-menu-close" class="absolute top-8 right-8 text-3xl text-current hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-700 max-w-xl w-full text-center">
+        <!-- Logo -->
+        <img src="/assets/images/icon/20250421_154632.jpg" alt="Site Logo" class="logo mx-auto mb-6 rounded-full h-32 w-32">
+
+        <!-- Personalized Greeting -->
+        <h1 class="text-xl font-bold mb-4">Hey, Thank You for contacting <span">Gastronomique</span>!</h1>
+
+        <!-- Confirmation Message -->
+        <p class="text-gray-300 mb-8">
+            We’ve received your booking request. Your message is under review. We will get back to you shortly via your email.
+        </p>
+        
+       
+        <hr class="mt-6">
+
+        <!-- Social Links -->
+         <p class="mb-6 text-gray-300 font-serif mt-6">
+            While waiting, why not explore more of our delicious dishes and stay connected with us:
+        </p>
+        <div class="flex justify-center gap-4 mb-6">
+            <a href="https://facebook.com/YOUR_PAGE" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://instagram.com/YOUR_PAGE" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://twitter.com/YOUR_PAGE" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
+            </a>
+        </div>
+
+        <!-- Back Link -->
+        <p class="text-gray-400 text-sm">
+            Thanks!  <a href="/index.html" class="text-blue-500 underline">Go back to home</a>.
+        </p>
+    </div>
+
+</body>
+</html>

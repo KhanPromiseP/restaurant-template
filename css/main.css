@@ -1,9 +1,11 @@
 /* Theme variables */
 :root {
+    --color-prima: #f5f5e88f;
+    --color-prima-dark: #08080777;
     --color-primary: #c9a74d;
     --color-primary-dark: #d4b45f;
     --color-secondary: #1a1a1a;
-    --color-secondary-dark: #2d2d2d;
+    --color-secondary-dark: #f5eaea75;
     --color-background: #f8f8f8;
     --color-background-dark: #121212;
     --color-text: #333333;
@@ -13,6 +15,7 @@
 }
 
 [data-theme="dark"] {
+    --color-prima:var(--color-prima-dark)
     --color-primary: var(--color-primary-dark);
     --color-secondary: var(--color-secondary-dark);
     --color-background: var(--color-background-dark);
@@ -38,10 +41,10 @@ body {
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(230, 226, 221, 0.897);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgb(255, 255, 255);
 }
 
 .hover-scale {

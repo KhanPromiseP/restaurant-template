@@ -1147,7 +1147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Web3Forms required hidden fields -->
     <input type="hidden" name="access_key" value="a7cbd3ee-f7c6-4338-8704-4f24a452170c">
     <input type="hidden" name="subject" value="New Gastronomique Booking">
-    <input type="hidden" name="redirect" value="https://gastrono.netlify.app/thank-you.html?name=" id="redirect-url">
+    <input type="hidden" name="redirect" value="https://gastrono.netlify.app/thank-you.html?name="id="redirect-url">
     <input type="hidden" name="from_name" value="Gastronomique Booking Form">
     <!-- Add honeypot spam protection -->
     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -1195,62 +1195,70 @@ document.addEventListener('DOMContentLoaded', function() {
 </form>
 
 <script>
-
-    document.getElementById('fullName').addEventListener('input', function() {
-    const name = this.value.trim();
+document.addEventListener('DOMContentLoaded', function() {
+    const bookingForm = document.getElementById('bookingForm');
+    const fullNameInput = document.querySelector('input[name="fullName"]');
     const redirectUrl = document.getElementById('redirect-url');
-    if (name) {
-        redirectUrl.value = `https://gastrono.netlify.app/thank-you.html?name=${encodeURIComponent(name)}`;
-    }
-});
 
-// Add JavaScript to handle form submission
-document.getElementById('bookingForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    
-    // Show loading state
-    submitButton.textContent = 'Booking...';
-    submitButton.disabled = true;
-    
-    try {
-        const formData = new FormData(form);
-        
-        // Convert FormData to object
-        const formObject = {};
-        for (const [key, value] of formData.entries()) {
-            formObject[key] = value;
-        }
-        
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formObject)
+    // Update redirect URL when name is entered
+    if (fullNameInput && redirectUrl) {
+        fullNameInput.addEventListener('input', function() {
+            const name = this.value.trim();
+            if (name) {
+                redirectUrl.value = `https://gastrono.netlify.app/thank-you.html?name=${encodeURIComponent(name)}`;
+            } else {
+                redirectUrl.value = 'https://gastrono.netlify.app/thank-you.html?name=Guest';
+            }
         });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            // Redirect to thank you page
-            window.location.href = formObject.redirect;
-        } else {
-            alert('Booking failed: ' + (result.message || 'Please try again.'));
-            console.error('Form submission error:', result);
-        }
-        
-    } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again.');
-    } finally {
-        // Reset button
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
     }
+
+    // Form submission handler
+    bookingForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const form = e.target;
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        
+        // Show loading state
+        submitButton.textContent = 'Booking...';
+        submitButton.disabled = true;
+        
+        try {
+            const formData = new FormData(form);
+            
+            // Ensure redirect URL includes the current name
+            const currentName = fullNameInput ? fullNameInput.value.trim() : 'Guest';
+            const finalRedirectUrl = `https://gastrono.netlify.app/thank-you.html?name=${encodeURIComponent(currentName)}`;
+            formData.set('redirect', finalRedirectUrl);
+            
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Object.fromEntries(formData))
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                // Redirect to thank you page with name parameter
+                window.location.href = finalRedirectUrl;
+            } else {
+                alert('Booking failed: ' + (result.message || 'Please try again.'));
+                console.error('Form submission error:', result);
+            }
+            
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        } finally {
+            // Reset button
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        }
+    });
 });
 </script>
 
@@ -1502,7 +1510,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     </footer>
 
     <!-- Back to Top -->
-    <a href="#home" id="back-to-top" class="fixed bottom-8 left-8 w-12 h-12 bg-primary text-secondary rounded-full flex items-center justify-center text-xl opacity-0 invisible transition-all duration-300 hover:bg-primary/90 hover-scale">
+    <a href="#home" id="back-to-top" class="fixed bottom-6 left-6 w-12 h-12 bg-primary text-secondary rounded-full flex items-center justify-center text-xl opacity-0 invisible transition-all duration-300 hover:bg-primary/90 hover-scale">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -2864,7 +2872,7 @@ document.head.appendChild(style);
                     Ready to launch your professional website?
                 </p>
                 <p class="text-gray-600 dark:text-gray-400 text-xs mt-1">
-                    Contact us now to get started!
+                    Contact us now to get started! -> 680834767
                 </p>
             </div>
             
@@ -2884,11 +2892,6 @@ document.head.appendChild(style);
             <span id="email-text">Email</span>
         </a>
 
-        <a 
-           class="flex items-center justify-center space-x-2 bg-yellow-600 hover:bg-yellow-700 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/30 flex-1 sm:flex-none text-xs sm:text-sm">
-            <i class="fas fa-mobile-alt text-xs sm:text-sm"></i>
-            <span>call 680834767</span>
-        </a>
     </div>
 </div>
     </div>
@@ -3096,12 +3099,12 @@ document.addEventListener('DOMContentLoaded', function() {
 /* Ensure responsiveness */
 @media (max-width: 480px) {
     #promo-button {
-        padding: 10px 16px;
+        padding: 8px 12px;
         font-size: 0.8rem;
     }
     
     #promo-button-container .absolute {
-        display: none;
+        display: none;         
     }
 }
 
@@ -3146,9 +3149,9 @@ document.addEventListener('DOMContentLoaded', function() {
         font-size: 0.8rem;
     }
     
-    #promo-button-container .absolute {
-        display: none; /* Hide hand pointer on very small screens */
-    }
+    /* #promo-button-container .absolute {
+        display: none; Hide hand pointer on very small screens
+    } */
 }
 
 /* Prevent horizontal scroll on mobile */

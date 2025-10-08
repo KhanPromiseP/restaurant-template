@@ -332,6 +332,29 @@ function displayBookingRecap() {
         document.getElementById('userName').textContent = name + '!';
     }
 
+    // Show success popup
+        function showPopup() {
+            const popup = document.getElementById('successPopup');
+            popup.classList.add('show');
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('successPopup');
+            popup.classList.remove('show');
+        }
+
+        // Auto-show popup on page load
+        window.addEventListener('load', function() {
+            setTimeout(showPopup, 500);
+        });
+
+        // Close popup on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
+        });
+
     // Update recap fields
     document.getElementById('recap-name').textContent = name;
     document.getElementById('recap-email').textContent = email;

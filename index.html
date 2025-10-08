@@ -570,123 +570,361 @@
     </div>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-testimonies mb-1">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-secondary uppercase tracking-widest text-sm">Visual Feast</span>
-                <h2 class="text-4xl md:text-5xl font-serif font-bold mt-4">Food Gallery</h2>
-                <div class="flex items-center justify-center mt-6">
-                    <div class="w-16 h-px bg-primary"></div>
-                    <div class="w-3 h-3 rounded-full bg-primary mx-2"></div>
-                    <div class="w-16 h-px bg-primary"></div>
-                </div>
-            </div>
+<section id="gallery" class="py-20 bg-testimonies mb-1">
+  <div class="container mx-auto px-6">
+    <!-- Section Header -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <span class="text-secondary uppercase tracking-widest text-sm">Visual Feast</span>
+      <h2 class="text-4xl md:text-5xl font-serif font-bold mt-4">Our Food Gallery</h2>
+      <div class="flex items-center justify-center mt-6">
+        <div class="w-16 h-px bg-primary"></div>
+        <div class="w-3 h-3 rounded-full bg-primary mx-2"></div>
+        <div class="w-16 h-px bg-primary"></div>
+      </div>
+      <!-- Added tag line -->
+      <p class="text-primary font-semibold mt-4 text-lg">✨ Taste the Richness of African Cuisine ✨</p>
+    </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <!-- Gallery Items (8 items) -->
-                <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80" alt="Dish 2" class="w-full h-64 object-cover transition-transform duration-1  group-hover:scale-105" loading="lazy" width="370" height="256">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                        <i class="fas fa-search-plus text-3xl text-secondary"></i>
-                    </div>
-                </div>
+    <!-- Gallery Grid -->
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Original 8 Dishes -->
+      <div class="gallery-item relative overflow-hidden rounded-lg group cursor-pointer" data-aos="zoom-in">
+        <img src="https://images.pexels.com/photos/12737656/pexels-photo-12737656.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jollof Rice" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Jollof Rice</div>
+      </div>
 
-                <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in">
-                    <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dish 3" class="w-full h-64 object-cover transition-transform duration-2 group-hover:scale-105" loading="lazy" width="370" height="256">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                        <i class="fas fa-search-plus text-3xl text-secondary"></i>
-                    </div>
-                </div>
+      <div class="gallery-item relative overflow-hidden rounded-lg group cursor-pointer" data-aos="zoom-in">
+        <img src="https://i.pinimg.com/736x/03/bc/21/03bc21b4d8a1e3184f4d6deb68ef3769.jpg?auto=compress&cs=tinysrgb&w=600" alt="Efo Riro" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Efo Riro</div>
+      </div>
 
-                <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in">
-                    <img src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dish 4" class="w-full h-64 object-cover transition-transform duration-3 group-hover:scale-105" loading="lazy" width="370" height="256">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                        <i class="fas fa-search-plus text-3xl text-secondary"></i>
-                    </div>
-                </div>
-                <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in">
-                    <img src="https://images.pexels.com/photos/2454533/pexels-photo-2454533.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dish 5" class="w-full h-64 object-cover transition-transform duration-4 group-hover:scale-105" loading="lazy" width="370" height="256">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                        <i class="fas fa-search-plus text-3xl text-secondary"></i>
-                    </div>
-                </div>
-                <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in">
-                    <img src="https://images.pexels.com/photos/3621225/pexels-photo-3621225.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dish 5" class="w-full h-64 object-cover transition-transform duration-4 group-hover:scale-105" loading="lazy" width="370" height="256">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                        <i class="fas fa-search-plus text-3xl text-secondary"></i>
-                    </div>
-                </div>
-                <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in">
-                    <img src="https://images.pexels.com/photos/4529429/pexels-photo-4529429.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Dish 6" class="w-full h-64 object-cover transition-transform duration-4 group-hover:scale-105" loading="lazy" width="370" height="256">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                        <i class="fas fa-search-plus text-3xl text-secondary"></i>
-                    </div>
-                </div>
-                <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in">
-                    <img src="https://images.pexels.com/photos/12480948/pexels-photo-12480948.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Dish 7" class="w-full h-64 object-cover transition-transform duration-4 group-hover:scale-105" loading="lazy" width="370" height="256">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                        <i class="fas fa-search-plus text-3xl text-secondary"></i>
-                    </div>
-                </div>
-                <div class="gallery-item relative overflow-hidden rounded-lg group" data-aos="zoom-in">
-                    <img src="https://images.pexels.com/photos/16388427/pexels-photo-16388427/free-photo-of-soup-in-bowl.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Dish 8" class="w-full h-64 object-cover transition-transform duration-4 group-hover:scale-105" loading="lazy" width="370" height="256">
-                    <div class="gallery-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                        <i class="fas fa-search-plus text-3xl text-secondary"></i>
-                    </div>
-                </div>
+      <div class="gallery-item relative overflow-hidden rounded-lg group cursor-pointer" data-aos="zoom-in">
+        <img src="https://i.pinimg.com/736x/17/16/ab/1716ab632963d4fa5ee00b6c69be210c.jpg?auto=compress&cs=tinysrgb&w=600" alt="Ndolé" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Ndolé</div>
+      </div>
+
+      <div class="gallery-item relative overflow-hidden rounded-lg group cursor-pointer" data-aos="zoom-in">
+        <img src="https://i.pinimg.com/1200x/b7/5d/0b/b75d0b40ee85d0c7619a06309402da11.jpg?auto=compress&cs=tinysrgb&w=600" alt="Egusi Soup" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Egusi Soup</div>
+      </div>
+
+      <div class="gallery-item relative overflow-hidden rounded-lg group cursor-pointer" data-aos="zoom-in">
+        <img src="https://i.pinimg.com/1200x/0b/b7/95/0bb79529ae642385e5fd144f59b963cb.jpg?auto=compress&cs=tinysrgb&w=600" alt="Fufu & Eru" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Fufu & Eru</div>
+      </div>
+
+      <div class="gallery-item relative overflow-hidden rounded-lg group cursor-pointer" data-aos="zoom-in">
+        <img src="https://i.pinimg.com/736x/6e/90/7b/6e907ba0016bb5445ba34b7134341fa4.jpg?auto=compress&cs=tinysrgb&w=600" alt="Waakye" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Achu & yellow soup</div>
+      </div>
+
+      <div class="gallery-item relative overflow-hidden rounded-lg group cursor-pointer" data-aos="zoom-in">
+        <img src="https://i.pinimg.com/1200x/8d/30/63/8d3063a61dc527042d3b802ed647837c.jpg?auto=compress&cs=tinysrgb&w=600" alt="Sukuma Wiki" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Pufpuf & beans</div>
+      </div>
+
+      <div class="gallery-item relative overflow-hidden rounded-lg group cursor-pointer" data-aos="zoom-in">
+        <img src="https://i.pinimg.com/736x/35/bf/a8/35bfa8969fe58bbd2ccbf1c7fa5d7b96.jpg?auto=compress&cs=tinysrgb&w=600" alt="Matoke" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Fried Plantains</div>
+      </div>
+
+      <!-- Additional African Dishes - Initially Hidden -->
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/736x/fa/1b/c0/fa1bc09466f8c3fcba0505f62021d0df.jpg?auto=compress&cs=tinysrgb&w=600" alt="Chapati & Beans" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Chapati & Beans</div>
+      </div>
+
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/1200x/a8/27/15/a8271568fcbadfbd2a3c3f20e5de1f9d.jpg?auto=compress&cs=tinysrgb&w=600" alt="Pepper Soup" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Pepper Soup</div>
+      </div>
+
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/736x/4f/ea/e6/4feae6c6308b802dd93adea017321044.jpg?auto=compress&cs=tinysrgb&w=600" alt="Koki Beans" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Koki Beans</div>
+      </div>
+
+      <!-- New African Dishes -->
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/736x/50/7f/57/507f57621e252763dc4d38e6aa52f7dc.jpg?auto=compress&cs=tinysrgb&w=600" alt="Banku & Tilapia" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Banku & Tilapia</div>
+      </div>
+
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/1200x/ad/9d/17/ad9d179d29a1c33978878e544f5f9b1f.jpg?auto=compress&cs=tinysrgb&w=600" alt="Injera & Wat" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Strawberry Cheesecake</div>
+      </div>
+
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/1200x/55/75/ae/5575aed14b6e30a0f2bd4a90d9849a88.jpg?auto=compress&cs=tinysrgb&w=600" alt="Bunny Chow" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Bunny Chow</div>
+      </div>
+
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/736x/bd/f1/1e/bdf11ed824fef3a5efe9214af14c08e2.jpg?auto=compress&cs=tinysrgb&w=600" alt="Pounded Yam & Egusi" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Yam with egg sauce</div>
+      </div>
+
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/736x/73/c8/4d/73c84df93a770108f50657de2f6b6900.jpg?auto=compress&cs=tinysrgb&w=600" alt="Suya" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Suya</div>
+      </div>
+
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/736x/1b/73/61/1b7361e9b1610fd0ea74d0ba6a661e0f.jpg?auto=compress&cs=tinysrgb&w=600" alt="Moi Moi" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Moi Moi</div>
+      </div>
+
+
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/1200x/3f/a4/1b/3fa41bc05ec216a321e8ab91eede3415.jpg?auto=compress&cs=tinysrgb&w=600" alt="Piri Piri Chicken" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Piri Piri Chicken</div>
+      </div>
+
+
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/736x/19/72/fb/1972fb870c85b25223a72a4e917fbac0.jpg?auto=compress&cs=tinysrgb&w=600" alt="Couscous" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Couscous</div>
+      </div>
+
+      <div class="hidden gallery-item relative overflow-hidden rounded-lg group cursor-pointer">
+        <img src="https://i.pinimg.com/1200x/3a/6e/38/3a6e38f6fe93baa1c86254c58eed7f17.jpg?auto=compress&cs=tinysrgb&w=600" alt="Tagine" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm sm:text-base font-semibold py-2 text-center">Noodles</div>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="text-center mt-10">
+      <button id="view-more-btn" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-all duration-300 hover:scale-105">
+        View More African Delicacies
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox-modal" class="fixed inset-0 bg-white/50 backdrop-blur-3xl z-[9999] hidden items-center justify-center p-4">
+
+  <div class="relative max-w-6xl w-full max-h-[90vh]">
+    <!-- Close Button -->
+    <button id="lightbox-close" class="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 w-14 h-14 bg-black/70 text-white rounded-full flex items-center justify-center hover:bg-black/90 transition duration-300 text-3xl">
+      ×
+    </button>
+
+    <!-- Prev Button -->
+    <button id="lightbox-prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-14 h-14 bg-black/70 text-white rounded-full flex items-center justify-center hover:bg-black/90 transition duration-300 text-3xl">
+      ‹
+    </button>
+
+    <!-- Next Button -->
+    <button id="lightbox-next" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-14 h-14 bg-black/70 text-white rounded-full flex items-center justify-center hover:bg-black/90 transition duration-300 text-3xl">
+      ›
+    </button>
+
+    <!-- Image + Title -->
+    <div class="flex flex-col items-center justify-center h-full">
+      <img id="lightbox-image" src="" alt="" class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-lg">
+      
+      <!-- Strong, visible title -->
+      <h3 id="lightbox-title" class="text-black text-2xl sm:text-3xl font-extrabold mt-5 text-center tracking-wide drop-shadow-md">
+        <!-- Dynamic title will appear here -->
+      </h3>
+    </div>
+  </div>
+</div>
+
+<script>
+// View More functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const viewMoreBtn = document.getElementById('view-more-btn');
+  let hiddenItems = Array.from(document.querySelectorAll('.gallery-item.hidden'));
+  let itemsShown = 8; // Initial visible items
+
+  viewMoreBtn.addEventListener('click', function() {
+    // Show next 4 hidden items
+    const itemsToShow = hiddenItems.slice(0, 4);
+    
+    if (itemsToShow.length === 0) {
+      viewMoreBtn.style.display = 'none';
+      return;
+    }
+    
+    itemsToShow.forEach(item => {
+      item.classList.remove('hidden');
+      // Add animation
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      
+      setTimeout(() => {
+        item.style.transition = 'all 0.5s ease';
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+      }, 10);
+    });
+
+    // Remove shown items from hiddenItems array
+    hiddenItems = hiddenItems.slice(4);
+    
+    // Update counter
+    itemsShown += itemsToShow.length;
+
+    // Hide button if no more items
+    if (hiddenItems.length === 0) {
+      viewMoreBtn.style.display = 'none';
+    }
+  });
+
+  // Lightbox functionality
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+  
+  let currentImageIndex = 0;
+  let galleryItems = [];
+
+  // Initialize gallery items array
+  function initGalleryItems() {
+    galleryItems = Array.from(document.querySelectorAll('.gallery-item:not(.hidden)'));
+  }
+
+  // Open lightbox
+  function openLightbox(index) {
+    currentImageIndex = index;
+    const item = galleryItems[index];
+    const img = item.querySelector('img');
+    const title = item.querySelector('div').textContent;
+    
+    // Use higher quality image if available
+    const highResSrc = img.src.replace('w=600', 'w=1200');
+    lightboxImage.src = highResSrc;
+    lightboxImage.alt = img.alt;
+    lightboxTitle.textContent = title;
+    
+    lightboxModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Close lightbox
+  function closeLightbox() {
+    lightboxModal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Navigate to next image
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+    openLightbox(currentImageIndex);
+  }
+
+  // Navigate to previous image
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+    openLightbox(currentImageIndex);
+  }
+
+  // Event listeners for gallery items
+  document.addEventListener('click', function(e) {
+    const galleryItem = e.target.closest('.gallery-item');
+    if (galleryItem) {
+      initGalleryItems();
+      const index = galleryItems.indexOf(galleryItem);
+      if (index !== -1) {
+        openLightbox(index);
+      }
+    }
+  });
+
+  // Lightbox controls
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxNext.addEventListener('click', nextImage);
+  lightboxPrev.addEventListener('click', prevImage);
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (!lightboxModal.classList.contains('hidden')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    }
+  });
+
+  // Close when clicking on backdrop
+  lightboxModal.addEventListener('click', function(e) {
+    if (e.target === lightboxModal) {
+      closeLightbox();
+    }
+  });
+
+  // Reinitialize gallery items when new items are shown
+  viewMoreBtn.addEventListener('click', function() {
+    setTimeout(initGalleryItems, 100);
+  });
+
+  // Initial initialization
+  initGalleryItems();
+});
+</script>
+
+<style>
+/* Lightbox animations */
+#lightbox-modal {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#lightbox-modal:not(.hidden) {
+  opacity: 1;
+}
+
+#lightbox-image {
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+#lightbox-modal:not(.hidden) #lightbox-image {
+  transform: scale(1);
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  #lightbox-prev, #lightbox-next {
+    width: 8px;
+    height: 8px;
+    font-size: 1rem;
+  }
+  
+  #lightbox-close {
+    top: 2rem;
+    right: 2rem;
+  }
+  
+  #lightbox-title {
+    font-size: 1.25rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Touch-friendly buttons */
+#lightbox-prev, #lightbox-next, #lightbox-close {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Smooth transitions for gallery items */
+.gallery-item {
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+</style>
 
 
 
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Lightbox functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const closeBtn = document.getElementById('close-btn');
-
-            // Click on gallery item or overlay
-            galleryItems.forEach(item => {
-                const img = item.querySelector('img');
-                const overlay = item.querySelector('.gallery-overlay');
-
-                [img, overlay].forEach(el => {
-                    el.addEventListener('click', () => {
-                        lightbox.classList.remove('hidden');
-                        lightboxImg.src = img.src;
-                        lightboxImg.alt = img.alt;
-                        document.body.style.overflow = 'hidden';
-                    });
-                });
-            });
-
-            // Close lightbox
-            closeBtn.addEventListener('click', () => {
-                lightbox.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            });
-
-            // Close when clicking outside image
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    lightbox.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-
-            // Close with ESC key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
-                    lightbox.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-    </script>
     <!-- Chefs Section -->
     <section id="chefs" class="py-20 bg-dark">
         <div class="container mx-auto px-6">
@@ -703,7 +941,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center" data-aos="fade-up" data-aos-delay="0">
                     <div class="relative overflow-hidden rounded-xl mb-6 group">
-                        <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="Chef John" class="w-full h-80 object-cover">
+                        <img src="https://media.istockphoto.com/id/638061582/photo/smiling-cook.jpg?s=612x612&w=0&k=20&c=Frm6xLGfSBzleF-CTo6P0waVq1FO3NAslZphcp3Ni-c=" alt="Chef John" class="w-full h-80 object-cover">
                         <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-4 transition-all duration-3 group-hover:bottom-6">
                             <a href="#" class="w-10 h-10 bg-primary text-secondary rounded-full flex items-center justify-center hover:bg-dark hover:text-primary transition-colors duration-2">
                                 <i class="fab fa-instagram"></i>
@@ -722,7 +960,7 @@
 
                 <div class="text-center" data-aos="fade-up" data-aos-delay="0.5">
                     <div class="relative overflow-hidden rounded-xl mb-6 group">
-                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Chef Maria" class="w-full h-80 object-cover">
+                        <img src="https://media.istockphoto.com/id/1667417725/photo/supermarket-grocery-store-and-portrait-of-happy-black-woman-for-service-in-eco-friendly.jpg?s=612x612&w=0&k=20&c=X-lxfQ5Pddk2ZkegJF0Xc1AQlh2Oaux0mtZDZJgOFVg=" alt="Chef Maria" class="w-full h-80 object-cover">
                         <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-4 transition-all duration-3 group-hover:bottom-6">
                             <a href="#" class="w-10 h-10 bg-primary text-secondary rounded-full flex items-center justify-center hover:bg-dark hover:text-primary transition-colors duration-2">
                                 <i class="fab fa-instagram"></i>
@@ -741,7 +979,7 @@
 
                 <div class="text-center" data-aos="fade-up" data-aos-delay="1">
                     <div class="relative overflow-hidden rounded-xl mb-6 group">
-                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" alt="Chef David" class="w-full h-80 object-cover">
+                        <img src="https://media.istockphoto.com/id/521208962/photo/man-opening-the-oven-on-the-kitchen.jpg?s=612x612&w=0&k=20&c=4a7_vDLxveFIEh5Jj-FPm5tzN-5iaz_L2JQlXYUaSJA=" alt="Chef David" class="w-full h-80 object-cover">
                         <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-4 transition-all duration-3 group-hover:bottom-6">
                             <a href="#" class="w-10 h-10 bg-primary text-secondary rounded-full flex items-center justify-center hover:bg-dark hover:text-primary transition-colors duration-2">
                                 <i class="fab fa-instagram"></i>
@@ -760,7 +998,7 @@
 
                 <div class="text-center" data-aos="fade-up" data-aos-delay="1.5">
                     <div class="relative overflow-hidden rounded-xl mb-6 group">
-                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="Chef Sophie" class="w-full h-80 object-cover">
+                        <img src="https://media.istockphoto.com/id/1348254024/photo/classroom-portrait-of-cheerful-adult-student-in-apron.jpg?s=612x612&w=0&k=20&c=3GJJWeYDrGJ72P-I61LC98lXKko2HeiVx4_IdbGROcA=" alt="Chef Sophie" class="w-full h-80 object-cover">
                         <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-4 transition-all duration-3 group-hover:bottom-6">
                             <a href="#" class="w-10 h-10 bg-primary text-secondary rounded-full flex items-center justify-center hover:bg-dark hover:text-primary transition-colors duration-2">
                                 <i class="fab fa-instagram"></i>
@@ -812,7 +1050,7 @@
                                         <span class="absolute -bottom-8 -right-2 text-primary text-4xl">"</span>
                                     </p>
                                     <div class="flex items-center justify-center space-x-4">
-                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Client" class="w-16 h-16 rounded-full object-cover">
+                                        <img src="https://media.istockphoto.com/id/1314997457/photo/portrait-of-a-young-businesswoman-using-a-digital-tablet-in-a-modern-office.jpg?s=612x612&w=0&k=20&c=hw7NlIsmT2HbLuQ_8U2T_zTCXafKRBK5Pl0QvUcGSAs=" alt="Client" class="w-16 h-16 rounded-full object-cover">
                                         <div>
                                             <h4 class="font-bold">Sarah Johnson</h4>
                                             <p class="text-gray-400">Food Critic</p>
@@ -836,7 +1074,7 @@
                                         <span class="absolute -bottom-8 -right-2 text-primary text-4xl">"</span>
                                     </p>
                                     <div class="flex items-center justify-center space-x-4">
-                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="Client" class="w-16 h-16 rounded-full object-cover">
+                                        <img src="https://media.istockphoto.com/id/2172317014/photo/happy-hispanic-man-working-on-laptop-at-home.jpg?s=612x612&w=0&k=20&c=9evc002hmjsuha6TiO8OftVTuZIE71Hr3qhmq8vRRH0=" alt="Client" class="w-16 h-16 rounded-full object-cover">
                                         <div>
                                             <h4 class="font-bold">Michael Brown</h4>
                                             <p class="text-gray-400">Restaurant Owner</p>
@@ -2040,64 +2278,80 @@ document.head.appendChild(style);
 </script>
 
 <!-- Promotional Popup Button -->
-<div id="promo-button-container" class="fixed bottom-24 left-4 sm:bottom-28 sm:left-6 z-50">
-    <div class="relative">
-        <!-- Animated Hand Pointer -->
-        <div class="absolute -top-8 -left-8 sm:-top-10 sm:-left-10 animate-bounce">
-            <div class="text-2xl sm:text-3xl">👇</div>
-        </div>
-        
-        <!-- Floating Stars -->
-        <div class="absolute -top-2 -right-2 animate-ping">
-            <i class="fas fa-star text-yellow-400 text-xs"></i>
-        </div>
-        <div class="absolute -bottom-1 -left-2 animate-pulse">
-            <i class="fas fa-star text-yellow-400 text-xs"></i>
-        </div>
-        
-        <button id="promo-button" class="group relative bg-gradient-to-r from-green-600 to-emerald-700 text-white px-6 py-4 rounded-full font-bold shadow-2xl hover:shadow-green-500/40 transition-all duration-500 hover:scale-110 border-2 border-white/20 animate-pulse hover:animate-none">
-            <span class="flex items-center space-x-2">
-                <i class="fas fa-bolt text-yellow-300"></i>
-                <span class="text-sm sm:text-base">GET THIS DEAL!</span>
-                <i class="fas fa-arrow-right text-yellow-300"></i>
-            </span>
-            
-            <!-- Glow effect -->
-            <span class="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 opacity-0 group-hover:opacity-100 -z-10 blur-md transition-opacity duration-500"></span>
-        </button>
-        
-        <!-- Limited time badge -->
-        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
-            LIMITED OFFER!
-        </div>
+<div id="promo-button-container" class="fixed bottom-24 left-6 sm:bottom-28 sm:left-8 z-50">
+  <div class="relative flex flex-col items-center">
+    <!-- Animated Hand Pointer -->
+    <div class="absolute -top-10 left-1/3 sm:left-1/4 animate-bounce">
+        <div class="text-3xl sm:text-4xl">👇</div>
     </div>
+
+
+    <!-- Floating Stars -->
+    <div class="absolute -top-1 -right-2 animate-ping">
+      <i class="fas fa-star text-yellow-400 text-xs"></i>
+    </div>
+    <div class="absolute -bottom-1 -left-2 animate-pulse">
+      <i class="fas fa-star text-yellow-400 text-xs"></i>
+    </div>
+
+    <!-- Main Button -->
+    <button id="promo-button"
+      class="group relative bg-gradient-to-r from-green-600 to-emerald-700 text-white px-6 py-4 rounded-full font-bold shadow-2xl hover:shadow-green-500/40 transition-all duration-500 hover:scale-110 border-2 border-white/20 animate-pulse hover:animate-none">
+      <span class="flex items-center space-x-2">
+        <i class="fas fa-bolt text-yellow-300"></i>
+        <span class="text-sm sm:text-base">GET THIS DEAL!</span>
+        <i class="fas fa-arrow-right text-yellow-300"></i>
+      </span>
+
+      <!-- Glow effect -->
+      <span
+        class="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 opacity-0 group-hover:opacity-100 -z-10 blur-md transition-opacity duration-500"></span>
+    </button>
+
+    <!-- Limited time badge -->
+    <div
+      class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse whitespace-nowrap">
+      LIMITED OFFER!
+    </div>
+  </div>
 </div>
+
 
 <!-- Promotional Popup Modal -->
 <div id="promo-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] hidden items-center justify-center p-3 sm:p-4">
     <div class="bg-white dark:bg-gray-900 rounded-xl shadow-2xl max-w-4xl w-full max-h-[95vh] overflow-hidden border border-gray-300 dark:border-gray-700 relative">
         <!-- Simple Close Button -->
-        <button id="promo-close" class="absolute top-2 right-2 w-8 h-8 bg-gray-600 hover:bg-gray-800 text-white rounded-full flex items-center justify-center text-xs transition-colors duration-300 z-10">
-            ×
-        </button>
-        
         <!-- Header -->
-        <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-4 sm:p-6 border-b border-gray-600">
-            <!-- Language Toggle -->
-            <div class="flex justify-end mb-3 sm:mb-4 mr-18">
-                <div class="bg-white/10 rounded-full p-2 flex backdrop-blur-sm ml-18">
-                    <button class="language-toggle active px-3 sm:px-4 py-1 rounded-full text-white bg-white/20 text-xs sm:text-sm font-medium transition-all duration-300" data-lang="en">
-                        EN
-                    </button>
-                    <button class="language-toggle px-3 sm:px-4 py-1 rounded-full text-white/70 hover:text-white text-xs sm:text-sm font-medium transition-all duration-300" data-lang="fr">
-                        FR
-                    </button>
-                </div>
-            </div>
-            
-            <h2 id="promo-title" class="text-xl sm:text-2xl font-bold text-white text-center">Complete Web Solution Package</h2>
-            <p id="promo-subtitle" class="text-gray-300 text-center mt-2 text-sm sm:text-base">Everything you need to launch professionally</p>
-        </div>
+<div class="bg-gradient-to-r from-gray-800 to-gray-900 p-4 sm:p-6 border-b border-gray-600 relative">
+
+  <!-- Top-right controls (Close + Language Toggle) -->
+  <div class="absolute top-4 right-4 flex items-center space-x-3">
+    <!-- Close Button -->
+    <button id="promo-close"
+      class="w-10 h-10 bg-gray-600 hover:bg-blue-400 text-white rounded-full flex items-center justify-center text-lg font-bold transition-colors duration-300">
+      ×
+    </button>
+
+    <!-- Language Toggle -->
+    <div class="bg-white/10 rounded-full p-2 flex backdrop-blur-sm">
+      <button
+        class="language-toggle active px-3 sm:px-4 py-1 rounded-full text-white bg-white/20 text-xs sm:text-sm font-medium transition-all duration-300"
+        data-lang="en">
+        EN
+      </button>
+      <button
+        class="language-toggle px-3 sm:px-4 py-1 rounded-full text-white/70 hover:text-white text-xs sm:text-sm font-medium transition-all duration-300"
+        data-lang="fr">
+        FR
+      </button>
+    </div>
+  </div>
+
+  <!-- Title & Subtitle -->
+  <h2 id="promo-title" class="text-xl sm:text-2xl font-bold text-white text-center mt-12">Complete Web Solution Package</h2>
+  <p id="promo-subtitle" class="text-gray-300 text-center mt-2 text-sm sm:text-base">Everything you need to launch professionally</p>
+</div>
+
         
         <!-- Content -->
         <div class="p-4 sm:p-6 overflow-y-auto max-h-[50vh] sm:max-h-[55vh]">
@@ -2341,7 +2595,7 @@ document.head.appendChild(style);
             
             <div class="flex flex-col sm:flex-row gap-3 justify-center">
                 <!-- WhatsApp Button -->
-                <a href="https://wa.me/237612345678?text=Hello!%20I'm%20interested%20in%20your%20complete%20web%20solution%20package%20from%20Gastronomique%20website" 
+                <a href="https://wa.me/237680834767?text=Hello!%20I'm%20interested%20in%20your%20complete%20web%20solution%20package%20from%20Gastronomique%20website, ..." 
                    target="_blank"
                    class="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-green-500/30 flex-1 sm:flex-none">
                     <i class="fab fa-whatsapp"></i>
@@ -2349,10 +2603,16 @@ document.head.appendChild(style);
                 </a>
                 
                 <!-- Email Button -->
-                <a href="mailto:promisecreative@email.com?subject=Web Solution Package Inquiry - Gastronomique&body=Hello! I'm interested in your complete web solution package. Please provide more details."
+                <a href="mailto:khanpennpromise@gmail.com?subject=Web Solution Package Inquiry - Gastronomique&body=Hello! I'm interested in your complete web solution package. Please provide more details."
                    class="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/30 flex-1 sm:flex-none">
                     <i class="fas fa-envelope"></i>
                     <span id="email-text" class="text-sm sm:text-base">Email</span>
+                </a>
+
+                <a 
+                   class="flex items-center justify-center space-x-2 bg-yellow-600 hover:bg-yellow-700 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/30 flex-1 sm:flex-none">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span id="email-text" class="text-sm sm:text-base">call 680834767</span>
                 </a>
             </div>
         </div>

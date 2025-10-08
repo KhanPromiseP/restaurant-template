@@ -1147,7 +1147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Web3Forms required hidden fields -->
     <input type="hidden" name="access_key" value="a7cbd3ee-f7c6-4338-8704-4f24a452170c">
     <input type="hidden" name="subject" value="New Gastronomique Booking">
-    <input type="hidden" name="redirect" value="http://127.0.0.1:5503/thank-you.html">
+    <input type="hidden" name="redirect" value="https://gastrono.netlify.app/thank-you.htmlname=" id="redirect-url">
     <input type="hidden" name="from_name" value="Gastronomique Booking Form">
     <!-- Add honeypot spam protection -->
     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -1195,6 +1195,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </form>
 
 <script>
+
+    document.getElementById('fullName').addEventListener('input', function() {
+    const name = this.value.trim();
+    const redirectUrl = document.getElementById('redirect-url');
+    if (name) {
+        redirectUrl.value = `https://gastrono.netlify.app/thank-you.html?name=${encodeURIComponent(name)}`;
+    }
+});
+
 // Add JavaScript to handle form submission
 document.getElementById('bookingForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -2543,13 +2552,12 @@ document.head.appendChild(style);
 </script>
 
 <!-- Promotional Popup Button -->
-<div id="promo-button-container" class="fixed bottom-24 left-6 sm:bottom-28 sm:left-8 z-50">
+<div id="promo-button-container" class="fixed bottom-24 left-6 sm:bottom-28 sm:left-8 z-40">
   <div class="relative flex flex-col items-center">
     <!-- Animated Hand Pointer -->
     <div class="absolute -top-10 left-1/3 sm:left-1/4 animate-bounce">
         <div class="text-3xl sm:text-4xl">👇</div>
     </div>
-
 
     <!-- Floating Stars -->
     <div class="absolute -top-1 -right-2 animate-ping">
@@ -2584,271 +2592,270 @@ document.head.appendChild(style);
 
 <!-- Promotional Popup Modal -->
 <div id="promo-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] hidden items-center justify-center p-3 sm:p-4">
-    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-2xl max-w-4xl w-full max-h-[95vh] overflow-hidden border border-gray-300 dark:border-gray-700 relative">
-        <!-- Simple Close Button -->
+    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-2xl max-w-4xl w-full max-h-[95vh] overflow-hidden border border-gray-300 dark:border-gray-700 relative flex flex-col">
         <!-- Header -->
-<div class="bg-gradient-to-r from-gray-800 to-gray-900 p-4 sm:p-6 border-b border-gray-600 relative">
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-4 sm:p-6 border-b border-gray-600 relative flex-shrink-0">
+            <!-- Top-right controls (Close + Language Toggle) -->
+            <div class="absolute top-4 right-4 flex items-center space-x-3">
+                <!-- Close Button -->
+                <button id="promo-close"
+                    class="w-10 h-10 bg-gray-600 hover:bg-blue-400 text-white rounded-full flex items-center justify-center text-lg font-bold transition-colors duration-300">
+                    ×
+                </button>
 
-  <!-- Top-right controls (Close + Language Toggle) -->
-  <div class="absolute top-4 right-4 flex items-center space-x-3">
-    <!-- Close Button -->
-    <button id="promo-close"
-      class="w-10 h-10 bg-gray-600 hover:bg-blue-400 text-white rounded-full flex items-center justify-center text-lg font-bold transition-colors duration-300">
-      ×
-    </button>
-
-    <!-- Language Toggle -->
-    <div class="bg-white/10 rounded-full p-2 flex backdrop-blur-sm">
-      <button
-        class="language-toggle active px-3 sm:px-4 py-1 rounded-full text-white bg-white/20 text-xs sm:text-sm font-medium transition-all duration-300"
-        data-lang="en">
-        EN
-      </button>
-      <button
-        class="language-toggle px-3 sm:px-4 py-1 rounded-full text-white/70 hover:text-white text-xs sm:text-sm font-medium transition-all duration-300"
-        data-lang="fr">
-        FR
-      </button>
-    </div>
-  </div>
-
-  <!-- Title & Subtitle -->
-  <h2 id="promo-title" class="text-xl sm:text-2xl font-bold text-white text-center mt-12">Complete Web Solution Package</h2>
-  <p id="promo-subtitle" class="text-gray-300 text-center mt-2 text-sm sm:text-base">Everything you need to launch professionally</p>
-</div>
-
-        
-        <!-- Content -->
-        <div class="p-4 sm:p-6 overflow-y-auto max-h-[50vh] sm:max-h-[55vh]">
-            <!-- English Content -->
-            <div id="content-en" class="space-y-4 sm:space-y-6">
-                <!-- AI Chatbot Feature -->
-                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
-                    <div class="flex items-start space-x-3">
-                        <i class="fas fa-robot text-green-600 dark:text-green-400 mt-1"></i>
-                        <div>
-                            <h3 class="font-bold text-gray-800 dark:text-white text-sm sm:text-base mb-2">Free AI Chatbot - Your 24/7 Support Team</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
-                                We provide a completely FREE AI chatbot trained specifically for your business. It responds exactly like a human and handles customer inquiries 24/7 - no extra costs!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Features Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    <!-- Column 1 -->
-                    <div class="space-y-3">
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-bolt text-blue-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Lightning Fast</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Optimized for speed and performance</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-mobile-alt text-green-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Fully Responsive</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Perfect on all devices and screens</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-envelope text-red-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Contact Forms</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Working forms with email notifications</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-adjust text-purple-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Light/Dark Mode</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Automatic theme switching</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Column 2 -->
-                    <div class="space-y-3">
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-share-alt text-indigo-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Social Media</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Integrated social connections</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-server text-orange-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Free Hosting</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">1 year of free hosting included</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-globe text-cyan-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Free Domain</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Professional domain for 1 year</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fab fa-whatsapp text-green-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">One-Click WhatsApp</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Direct customer messaging</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Support Feature -->
-                <div class="flex items-start space-x-2 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <i class="fas fa-headset text-blue-500 mt-1 text-sm"></i>
-                    <div>
-                        <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Amazing Support</h4>
-                        <p class="text-xs text-gray-600 dark:text-gray-400">Dedicated assistance and maintenance</p>
-                    </div>
-                </div>
-
-                <!-- Trust & Urgency -->
-                <div class="space-y-3">
-                    <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-3 border border-yellow-200 dark:border-yellow-800">
-                        <p class="text-yellow-800 dark:text-yellow-200 text-xs sm:text-sm text-center font-medium">
-                            🤔 This is NOT too good to be true! We're helping small businesses succeed online.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-3 border border-red-200 dark:border-red-800">
-                        <p class="text-red-800 dark:text-red-200 text-xs sm:text-sm text-center font-bold">
-                            ⏰ Contact us today before this offer ends!
-                        </p>
-                    </div>
+                <!-- Language Toggle -->
+                <div class="bg-white/10 rounded-full p-2 flex backdrop-blur-sm">
+                    <button
+                        class="language-toggle active px-3 sm:px-4 py-1 rounded-full text-white bg-white/20 text-xs sm:text-sm font-medium transition-all duration-300"
+                        data-lang="en">
+                        EN
+                    </button>
+                    <button
+                        class="language-toggle px-3 sm:px-4 py-1 rounded-full text-white/70 hover:text-white text-xs sm:text-sm font-medium transition-all duration-300"
+                        data-lang="fr">
+                        FR
+                    </button>
                 </div>
             </div>
-            
-            <!-- French Content -->
-            <div id="content-fr" class="space-y-4 sm:space-y-6 hidden">
-                <!-- AI Chatbot Feature -->
-                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
-                    <div class="flex items-start space-x-3">
-                        <i class="fas fa-robot text-green-600 dark:text-green-400 mt-1"></i>
+
+            <!-- Title & Subtitle -->
+            <h2 id="promo-title" class="text-xl sm:text-2xl font-bold text-white text-center mt-12">Complete Web Solution Package</h2>
+            <p id="promo-subtitle" class="text-gray-300 text-center mt-2 text-sm sm:text-base">Everything you need to launch professionally</p>
+        </div>
+        
+        <!-- Scrollable Content Area -->
+        <div class="flex-1 overflow-y-auto overscroll-contain">
+            <div class="p-4 sm:p-6">
+                <!-- English Content -->
+                <div id="content-en" class="space-y-4 sm:space-y-6">
+                    <!-- AI Chatbot Feature -->
+                    <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-robot text-green-600 dark:text-green-400 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800 dark:text-white text-sm sm:text-base mb-2">Free AI Chatbot - Your 24/7 Support Team</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
+                                    We provide a completely FREE AI chatbot trained specifically for your business. It responds exactly like a human and handles customer inquiries 24/7 - no extra costs!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                        <!-- Column 1 -->
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-bolt text-blue-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Lightning Fast</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Optimized for speed and performance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-mobile-alt text-green-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Fully Responsive</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Perfect on all devices and screens</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-envelope text-red-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Contact Forms</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Working forms with email notifications</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-adjust text-purple-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Light/Dark Mode</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Automatic theme switching</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Column 2 -->
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-share-alt text-indigo-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Social Media</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Integrated social connections</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-server text-orange-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Free Hosting</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">1 year of free hosting included</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-globe text-cyan-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Free Domain</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Professional domain for 1 year</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fab fa-whatsapp text-green-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">One-Click WhatsApp</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Direct customer messaging</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Support Feature -->
+                    <div class="flex items-start space-x-2 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                        <i class="fas fa-headset text-blue-500 mt-1 text-sm"></i>
                         <div>
-                            <h3 class="font-bold text-gray-800 dark:text-white text-sm sm:text-base mb-2">Chatbot IA Gratuit - Votre Équipe Support 24h/24</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
-                                Nous fournissons un chatbot IA complètement GRATUIT formé spécifiquement pour votre entreprise. Il répond exactement comme un humain et gère les demandes clients 24h/24 - sans frais supplémentaires !
+                            <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Amazing Support</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Dedicated assistance and maintenance</p>
+                        </div>
+                    </div>
+
+                    <!-- Trust & Urgency -->
+                    <div class="space-y-3">
+                        <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-3 border border-yellow-200 dark:border-yellow-800">
+                            <p class="text-yellow-800 dark:text-yellow-200 text-xs sm:text-sm text-center font-medium">
+                                🤔 This is NOT too good to be true! We're helping small businesses succeed online.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-3 border border-red-200 dark:border-red-800">
+                            <p class="text-red-800 dark:text-red-200 text-xs sm:text-sm text-center font-bold">
+                                ⏰ Contact us today before this offer ends!
                             </p>
                         </div>
                     </div>
                 </div>
+                
+                <!-- French Content -->
+                <div id="content-fr" class="space-y-4 sm:space-y-6 hidden">
+                    <!-- AI Chatbot Feature -->
+                    <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-robot text-green-600 dark:text-green-400 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800 dark:text-white text-sm sm:text-base mb-2">Chatbot IA Gratuit - Votre Équipe Support 24h/24</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
+                                    Nous fournissons un chatbot IA complètement GRATUIT formé spécifiquement pour votre entreprise. Il répond exactement comme un humain et gère les demandes clients 24h/24 - sans frais supplémentaires !
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Features Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    <!-- Column 1 -->
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                        <!-- Column 1 -->
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-bolt text-blue-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Ultra-Rapide</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Optimisé pour vitesse et performance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-mobile-alt text-green-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Complètement Responsive</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Parfait sur tous appareils</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-envelope text-red-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Formulaires de Contact</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Formulaires fonctionnels avec notifications</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-adjust text-purple-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Mode Clair/Sombre</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Changement automatique de thème</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Column 2 -->
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-share-alt text-indigo-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Réseaux Sociaux</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Connexions sociales intégrées</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-server text-orange-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Hébergement Gratuit</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">1 an d'hébergement gratuit inclus</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-globe text-cyan-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Domaine Gratuit</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Domaine professionnel 1 an gratuit</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                                <i class="fab fa-whatsapp text-green-500 mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm">WhatsApp en Un Clic</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Messagerie client directe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Support Feature -->
+                    <div class="flex items-start space-x-2 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                        <i class="fas fa-headset text-blue-500 mt-1 text-sm"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Support Exceptionnel</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Assistance et maintenance dédiées</p>
+                        </div>
+                    </div>
+
+                    <!-- Trust & Urgency -->
                     <div class="space-y-3">
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-bolt text-blue-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Ultra-Rapide</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Optimisé pour vitesse et performance</p>
-                            </div>
+                        <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-3 border border-yellow-200 dark:border-yellow-800">
+                            <p class="text-yellow-800 dark:text-yellow-200 text-xs sm:text-sm text-center font-medium">
+                                🤔 Ce n'est PAS trop beau pour être vrai ! Nous aidons les petites entreprises à réussir en ligne.
+                            </p>
                         </div>
                         
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-mobile-alt text-green-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Complètement Responsive</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Parfait sur tous appareils</p>
-                            </div>
+                        <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-3 border border-red-200 dark:border-red-800">
+                            <p class="text-red-800 dark:text-red-200 text-xs sm:text-sm text-center font-bold">
+                                ⏰ Contactez-nous aujourd'hui avant la fin de cette offre !
+                            </p>
                         </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-envelope text-red-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Formulaires de Contact</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Formulaires fonctionnels avec notifications</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-adjust text-purple-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Mode Clair/Sombre</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Changement automatique de thème</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Column 2 -->
-                    <div class="space-y-3">
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-share-alt text-indigo-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Réseaux Sociaux</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Connexions sociales intégrées</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-server text-orange-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Hébergement Gratuit</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">1 an d'hébergement gratuit inclus</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fas fa-globe text-cyan-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Domaine Gratuit</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Domaine professionnel 1 an gratuit</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <i class="fab fa-whatsapp text-green-500 mt-1 text-sm"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white text-sm">WhatsApp en Un Clic</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">Messagerie client directe</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Support Feature -->
-                <div class="flex items-start space-x-2 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <i class="fas fa-headset text-blue-500 mt-1 text-sm"></i>
-                    <div>
-                        <h4 class="font-semibold text-gray-800 dark:text-white text-sm">Support Exceptionnel</h4>
-                        <p class="text-xs text-gray-600 dark:text-gray-400">Assistance et maintenance dédiées</p>
-                    </div>
-                </div>
-
-                <!-- Trust & Urgency -->
-                <div class="space-y-3">
-                    <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-3 border border-yellow-200 dark:border-yellow-800">
-                        <p class="text-yellow-800 dark:text-yellow-200 text-xs sm:text-sm text-center font-medium">
-                            🤔 Ce n'est PAS trop beau pour être vrai ! Nous aidons les petites entreprises à réussir en ligne.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-3 border border-red-200 dark:border-red-800">
-                        <p class="text-red-800 dark:text-red-200 text-xs sm:text-sm text-center font-bold">
-                            ⏰ Contactez-nous aujourd'hui avant la fin de cette offre !
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Action Buttons -->
-        <div class="p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <!-- Action Buttons - Fixed at bottom -->
+        <div class="p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 flex-shrink-0">
             <div class="text-center mb-3 sm:mb-4">
                 <p id="contact-note" class="text-gray-800 dark:text-white font-bold text-sm sm:text-base">
                     Ready to launch your professional website?
@@ -3033,6 +3040,134 @@ document.addEventListener('DOMContentLoaded', function() {
     border-radius: 3px;
 }
 
+/* Enhanced promo modal scrolling for mobile */
+#promo-modal > div {
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Smooth scrolling for modal content */
+#promo-modal .overflow-y-auto {
+    scrollbar-width: thin;
+    scrollbar-color: #6b7280 transparent;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+#promo-modal .overflow-y-auto::-webkit-scrollbar {
+    width: 4px;
+}
+
+#promo-modal .overflow-y-auto::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 10px 0;
+}
+
+#promo-modal .overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: #6b7280;
+    border-radius: 2px;
+}
+
+#promo-modal .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background-color: #4b5563;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+    #promo-modal {
+        padding: 0 !important;
+    }
+    
+    #promo-modal > div {
+        max-height: 100vh !important;
+        height: 100vh !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    #promo-modal .p-4 {
+        padding: 1rem !important;
+    }
+    
+    #promo-modal .p-6 {
+        padding: 1.5rem !important;
+    }
+    
+    /* Ensure content is properly spaced */
+    #promo-modal .space-y-4 > * + * {
+        margin-top: 1rem;
+    }
+    
+    #promo-modal .space-y-6 > * + * {
+        margin-top: 1.5rem;
+    }
+    
+    /* Better touch targets for mobile */
+    #promo-modal a, #promo-modal button {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Enhanced button animations */
+#promo-button {
+    animation: gentlePulse 2s infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(5, 150, 105, 0.4);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(5, 150, 105, 0.6);
+    }
+}
+
+#promo-button:hover {
+    animation: none;
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(5, 150, 105, 0.8);
+}
+
+.language-toggle.active {
+    color: white;
+    font-weight: 600;
+}
+
+/* Hide promo button when chatbot is open on mobile */
+@media (max-width: 640px) {
+    #chatbot-window:not(.hidden) ~ #promo-button-container {
+        display: none !important;
+    }
+}
+
+/* Ensure responsiveness */
+@media (max-width: 480px) {
+    #promo-button {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+    
+    #promo-button-container .absolute {
+        display: none;
+    }
+}
+
 /* Mobile optimizations */
 @media (max-width: 640px) {
     #promo-modal > div {
@@ -3053,6 +3188,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bottom: auto !important;
     }
     
+    /* Completely hide promo button when chatbot is open on mobile */
     #chatbot-window:not(.hidden) ~ #promo-button-container {
         display: none !important;
     }

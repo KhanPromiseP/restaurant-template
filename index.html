@@ -1198,19 +1198,54 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.getElementById('bookingForm');
     const fullNameInput = document.querySelector('input[name="fullName"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    const phoneInput = document.querySelector('input[name="phone"]');
+    const guestsInput = document.querySelector('select[name="guests"]');
+    const dateInput = document.querySelector('input[name="date"]');
+    const timeInput = document.querySelector('input[name="time"]');
+    const specialRequestsInput = document.querySelector('textarea[name="specialRequests"]');
     const redirectUrl = document.getElementById('redirect-url');
 
-    // Update redirect URL when name is entered
-    if (fullNameInput && redirectUrl) {
-        fullNameInput.addEventListener('input', function() {
-            const name = this.value.trim();
-            if (name) {
-                redirectUrl.value = `https://gastrono.netlify.app/thank-you.html?name=${encodeURIComponent(name)}`;
-            } else {
-                redirectUrl.value = 'https://gastrono.netlify.app/thank-you.html?name=Guest';
-            }
-        });
+    // Function to update redirect URL with all parameters
+    function updateRedirectUrl() {
+        const name = fullNameInput ? fullNameInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        const phone = phoneInput ? phoneInput.value.trim() : '';
+        const guests = guestsInput ? guestsInput.value : '';
+        const date = dateInput ? dateInput.value : '';
+        const time = timeInput ? timeInput.value : '';
+        const specialRequests = specialRequestsInput ? specialRequestsInput.value.trim() : '';
+
+        // Build URL with all parameters
+        let url = 'https://gastrono.netlify.app/thank-you.html?';
+        
+        if (name) url += `name=${encodeURIComponent(name)}&`;
+        if (email) url += `email=${encodeURIComponent(email)}&`;
+        if (phone) url += `phone=${encodeURIComponent(phone)}&`;
+        if (guests) url += `guests=${encodeURIComponent(guests)}&`;
+        if (date) url += `date=${encodeURIComponent(date)}&`;
+        if (time) url += `time=${encodeURIComponent(time)}&`;
+        if (specialRequests) url += `specialRequests=${encodeURIComponent(specialRequests)}&`;
+        
+        // Remove trailing & if present
+        url = url.replace(/&$/, '');
+        
+        // If no parameters, use default
+        if (url === 'https://gastrono.netlify.app/thank-you.html?') {
+            url = 'https://gastrono.netlify.app/thank-you.html?name=Guest';
+        }
+        
+        redirectUrl.value = url;
     }
+
+    // Update redirect URL when any form field changes
+    if (fullNameInput) fullNameInput.addEventListener('input', updateRedirectUrl);
+    if (emailInput) emailInput.addEventListener('input', updateRedirectUrl);
+    if (phoneInput) phoneInput.addEventListener('input', updateRedirectUrl);
+    if (guestsInput) guestsInput.addEventListener('change', updateRedirectUrl);
+    if (dateInput) dateInput.addEventListener('change', updateRedirectUrl);
+    if (timeInput) timeInput.addEventListener('change', updateRedirectUrl);
+    if (specialRequestsInput) specialRequestsInput.addEventListener('input', updateRedirectUrl);
 
     // Form submission handler
     bookingForm.addEventListener('submit', async function(e) {
@@ -1227,9 +1262,30 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const formData = new FormData(form);
             
-            // Ensure redirect URL includes the current name
-            const currentName = fullNameInput ? fullNameInput.value.trim() : 'Guest';
-            const finalRedirectUrl = `https://gastrono.netlify.app/thank-you.html?name=${encodeURIComponent(currentName)}`;
+            // Get current form values for final redirect
+            const name = fullNameInput ? fullNameInput.value.trim() : 'Guest';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const phone = phoneInput ? phoneInput.value.trim() : '';
+            const guests = guestsInput ? guestsInput.value : '';
+            const date = dateInput ? dateInput.value : '';
+            const time = timeInput ? timeInput.value : '';
+            const specialRequests = specialRequestsInput ? specialRequestsInput.value.trim() : '';
+
+            // Build final redirect URL with all parameters
+            let finalRedirectUrl = 'https://gastrono.netlify.app/thank-you.html?';
+            
+            if (name) finalRedirectUrl += `name=${encodeURIComponent(name)}&`;
+            if (email) finalRedirectUrl += `email=${encodeURIComponent(email)}&`;
+            if (phone) finalRedirectUrl += `phone=${encodeURIComponent(phone)}&`;
+            if (guests) finalRedirectUrl += `guests=${encodeURIComponent(guests)}&`;
+            if (date) finalRedirectUrl += `date=${encodeURIComponent(date)}&`;
+            if (time) finalRedirectUrl += `time=${encodeURIComponent(time)}&`;
+            if (specialRequests) finalRedirectUrl += `specialRequests=${encodeURIComponent(specialRequests)}&`;
+            
+            // Remove trailing &
+            finalRedirectUrl = finalRedirectUrl.replace(/&$/, '');
+            
+            // Update the redirect field with the complete URL
             formData.set('redirect', finalRedirectUrl);
             
             const response = await fetch('https://api.web3forms.com/submit', {
@@ -1243,7 +1299,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const result = await response.json();
             
             if (result.success) {
-                // Redirect to thank you page with name parameter
+                // Redirect to thank you page with all parameters
                 window.location.href = finalRedirectUrl;
             } else {
                 alert('Booking failed: ' + (result.message || 'Please try again.'));
@@ -1259,6 +1315,9 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = false;
         }
     });
+
+    // Initialize redirect URL on page load
+    updateRedirectUrl();
 });
 </script>
 
@@ -2645,7 +2704,7 @@ document.head.appendChild(style);
                             <div>
                                 <h3 class="font-bold text-gray-800 dark:text-white text-sm sm:text-base mb-2">Free AI Chatbot - Your 24/7 Support Team</h3>
                                 <p class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
-                                    We provide a completely FREE AI chatbot trained specifically for your business. It responds exactly like a human and handles customer inquiries 24/7 - no extra costs!
+                                    We provide a completely FREE AI chatbot trained specifically for your business. It responds exactly like a human and handles customer inquiries 24/7 - no extra costs!.
                                 </p>
                             </div>
                         </div>

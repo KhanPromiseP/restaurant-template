@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thank You - Booking Confirmed</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
     body {
         font-family: 'Inter', sans-serif;
@@ -23,9 +23,55 @@
     .social-icon:hover {
         transform: scale(1.1);
     }
+    
+    /* Success Popup Styles */
+    .success-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        z-index: 10000;
+        opacity: 0;
+        transition: all 0.3s ease;
+        max-width: 90%;
+        width: 400px;
+        text-align: center;
+    }
+    
+    .success-popup.show {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .success-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        animation: bounce 1s infinite;
+    }
+    
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
 </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen px-8 py-18">
+    <!-- Success Popup -->
+    <div id="successPopup" class="success-popup">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Booking Submitted Successfully!</h3>
+        <p class="text-green-100">We've received your request and will contact you shortly.</p>
+        <button onclick="closePopup()" class="mt-4 bg-white text-green-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+            Continue
+        </button>
+    </div>
      <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 w-full py-6 transition-all duration-300 z-50 bg-testimonies">
         <div class="container mx-auto px-6 flex justify-between items-center">

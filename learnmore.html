@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <link rel="preload" href="index.html" as="document">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="css/main.css"></script>
@@ -288,6 +289,47 @@
                 });
             });
         });
+
+
+         // Enhanced instant navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        const backButton = document.querySelector('a[href="index.html"]');
+        
+        backButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Store current scroll position before navigating
+            sessionStorage.setItem('mainPageScroll', window.scrollY);
+            
+            // Use replaceState to avoid adding to browser history
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.replace('index.html');
+            }
+        });
+
+        // Simple back to top functionality
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.remove('opacity-100', 'visible');
+                backToTop.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
     </script>
 </body>
 

@@ -280,3 +280,52 @@ body {
 .animate-fade-in-up {
     animation: fade-in-up 0.8s ease-out forwards;
 }
+
+
+/* Email-specific styles */
+.email-container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.email-header {
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.email-content {
+    padding: 20px;
+    background: white;
+}
+
+.email-footer {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+@media (max-width: 640px) {
+    /* Add bottom padding to footer to account for floating buttons */
+    footer.bg-dark {
+        padding-bottom: 160px !important;
+    }
+    
+    /* Ensure the last section has proper spacing */
+    section.bg-primary:last-of-type {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Add safe area support for notched phones */
+    @supports (padding: max(0px)) {
+        footer.bg-dark {
+            padding-bottom: max(160px, env(safe-area-inset-bottom)) !important;
+        }
+    }
+}
